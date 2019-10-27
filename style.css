@@ -137,7 +137,7 @@ video {
 h1{
   font-family: text;
 }
-@media screen and (max-width: 375px){
+@media screen and (max-width: 414px){
   div{
     padding: 0px;
   }
@@ -149,6 +149,8 @@ h1{
     width: 100%;
   }
   .content{
+    border-radius: 0px;
+    margin-top: 20px;
     width: 90%;
   }
   .holder{
@@ -166,7 +168,7 @@ h1{
   }
 }
 
-@media screen and (max-height: 414px){
+@media screen and (max-height: 375px){
   .content {
     border-radius: 0px;
     display: none;
