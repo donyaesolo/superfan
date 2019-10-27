@@ -137,7 +137,7 @@ function expando () {
     setTimeout(function () {
       content[1].style.display = 'block'
       holder[1].style.display = 'block'
-      if (!opening[0].isPlaying || !opening[2].isPlaying || !opening[3].isPlaying ||!opening[4].isPlaying) {
+      if (!opening[0].isPlaying || !opening[2].isPlaying || !opening[3].isPlaying || !opening[4].isPlaying) {
         opening[0].pause()
         opening[2].pause()
         opening[3].pause()
@@ -170,7 +170,7 @@ function expando () {
     setTimeout(function () {
       content[2].style.display = 'block'
       holder[2].style.display = 'block'
-      if (!opening[0].isPlaying || !opening[1].isPlaying || !opening[3].isPlaying || !opening[4].isPlaying || !opening[5].isPlaying) {
+      if (!opening[0].isPlaying || !opening[1].isPlaying || !opening[3].isPlaying || !opening[4].isPlaying) {
         opening[0].pause()
         opening[1].pause()
         opening[3].pause()
