@@ -170,16 +170,16 @@ function expando () {
     setTimeout(function () {
       content[2].style.display = 'block'
       holder[2].style.display = 'block'
-      if (!opening[0].isPlaying || !opening[1].isPlaying || !opening[3].isPlaying || !opening[4].isPlaying) {
+      /*if (!opening[0].isPlaying || !opening[1].isPlaying || !opening[3].isPlaying || !opening[4].isPlaying) {
         opening[0].pause()
         opening[1].pause()
         opening[3].pause()
         opening[4].pause()
         opening[5].pause()
         opening[2].play()
-      } else {
+      } else {*/
         opening[2].play()
-      }
+    //  }
     }, 1000)
     ao.style.boxShadow = '5px 10px black'
     aol2.addEventListener('click', popup)
