@@ -166,7 +166,7 @@ h1{
   }
 }
 
-@media screen and (max-height: 375px){
+@media screen and (max-height: 414px){
   .content {
     border-radius: 0px;
     display: none;
