@@ -129,6 +129,9 @@ video {
   transition: ease 1s;
   transform: scale(1.05);
 }
+.content-small{
+  display: none;
+}
 
 @font-face {
   font-family: text;
@@ -142,11 +145,11 @@ h1{
     padding: 0px;
   }
   .logo {
-    margin: 0px
-    padding: 0;
+
     display: flex;
     flex-direction: column-reverse;
     width: 100%;
+
   }
   .content{
     border-radius: 0px;
@@ -162,13 +165,27 @@ h1{
   }
   #container {
     width: 100%;
+    filter: grayscale(0);
+    opacity: 1;
   }
   .side-bar {
     display: none;
   }
+  .content-small{
+    display: none;
+  }
+  #hai-logo {
+    width: 98%;
+    height: 98%;
+  }
+  #bsr-logo{
+    width: 98%;
+    height: 98%;
+  }
+
 }
 
-@media screen and (max-height: 375px){
+@media screen and (max-height: 414px){
   .content {
     border-radius: 0px;
     display: none;
@@ -189,9 +206,26 @@ h1{
     width: 100%;
   }
   #container {
+    padding-right: 5px;
     width: 100%;
+  }
+  #days-logo {
+    margin-right: -60px;
+  }
+  #bsr-logo{
+    margin-right: 5px;
   }
   .side-bar {
     display: none;
+  }
+  .content-small{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 90%;
+  }
+  .right {
+    padding-left: 50px;
+   text-align: right;
   }
 }

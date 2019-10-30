@@ -28,6 +28,9 @@ var anime = [mha, days, ao, bsr, hai, m2]
 var logos = [mhal, daysl, aol, bsrl, hail, m2l]
 var animeNumber
 var opening = document.getElementsByClassName('video')
+var intViewportHeight = window.innerHeight
+var intViewportWidth = window.innerWidth
+var smallContent = document.getElementsByClassName('content-small')
 function bokuNo () {
   animeNumber = 0
   expando()
@@ -73,10 +76,22 @@ var ranCaHero = ['images/mha/caHero/aoyama.png', 'images/mha/caHero/bakugo.png',
   'images/mha/caHero/sato.png', 'images/mha/caHero/sero.png', 'images/mha/caHero/shoji.png',
   'images/mha/caHero/tenya.png', 'images/mha/caHero/todoroki.png', 'images/mha/caHero/tokoyami.png',
   'images/mha/caHero/toru.png', 'images/mha/caHero/tsuyu.png', 'images/mha/caHero/uraraka.png']
-  var heroes
+var heroes
 function expando () {
   var i
   if (animeNumber === 0) { // My Hero Academia
+    if (intViewportHeight >= 375 && intViewportHeight <= 414 && intViewportWidth >= 667 && intViewportWidth <= 896) {
+      if (animeNumber === 0) {
+        for (i = 0; i < smallContent.length; i++) {
+          smallContent[i].style.display = 'flex'
+        }
+        smallContent[0].style.display = 'none'
+      } else {
+        for (i = 0; i < smallContent.length; i++) {
+          smallContent[i].style.display = 'none'
+        }
+      }
+    }
     mha.addEventListener('mouseover', stopHover)
     for (i = 0; i < anime.length; i++) {
       anime[i].style.opacity = '.5'
@@ -89,6 +104,11 @@ function expando () {
       logos[i].style.display = 'flex'
       anime[0].style.opacity = '1'
       anime[0].style.filter = 'grayscale(0%)'
+    }
+    if (intViewportHeight >= 375 && intViewportHeight <= 414 && intViewportWidth >= 667 && intViewportWidth <= 896) {
+      for (i = 0; i < smallContent.length; i++) {
+        anime[i].style.height = '25%'
+      }
     }
     mha.style.background = 'rgba(255, 251, 176, .5)'
     mha.style.transition = 'ease 1s'
@@ -118,6 +138,18 @@ function expando () {
       sideImg[1].src = ranCaHero[r]
     }, 1000)
   } else if (animeNumber === 1) { // Days
+    if (intViewportHeight <= 414 && intViewportWidth <= 896) {
+      if (animeNumber === 1) {
+        for (i = 0; i < smallContent.length; i++) {
+          smallContent[i].style.display = 'flex'
+        }
+        smallContent[1].style.display = 'none'
+      } else {
+        for (i = 0; i < smallContent.length; i++) {
+          smallContent[i].style.display = 'none'
+        }
+      }
+    }
     for (i = 0; i < anime.length; i++) {
       anime[i].style.opacity = '.5'
       anime[i].style.height = 'calc(100%/6)'
@@ -129,6 +161,11 @@ function expando () {
       logos[i].style.display = 'flex'
       anime[1].style.opacity = '1'
       anime[1].style.filter = 'grayscale(0%)'
+    }
+    if (intViewportHeight <= 414 && intViewportWidth <= 896) {
+      for (i = 0; i < smallContent.length; i++) {
+        anime[i].style.height = '25%'
+      }
     }
     days.style.background = 'rgba(0, 0, 0, .5)'
     days.style.transition = 'ease 1s'
@@ -150,7 +187,19 @@ function expando () {
     }, 1000)
     days.style.boxShadow = '5px 10px black'
     daysl2.addEventListener('click', popup)
-  } else if (animeNumber === 2) {
+  } else if (animeNumber === 2) { // All Out
+    if (intViewportHeight <= 414 && intViewportWidth <= 896) {
+      if (animeNumber === 2) {
+        for (i = 0; i < smallContent.length; i++) {
+          smallContent[i].style.display = 'flex'
+        }
+        smallContent[2].style.display = 'none'
+      } else {
+        for (i = 0; i < smallContent.length; i++) {
+          smallContent[i].style.display = 'none'
+        }
+      }
+    }
     for (i = 0; i < anime.length; i++) {
       anime[i].style.opacity = '.5'
       anime[i].style.height = 'calc(100%/6)'
@@ -163,6 +212,11 @@ function expando () {
       anime[2].style.opacity = '1'
       anime[2].style.filter = 'grayscale(0%)'
     }
+    if (intViewportHeight <= 414 && intViewportWidth <= 896) {
+      for (i = 0; i < smallContent.length; i++) {
+        anime[i].style.height = '25%'
+      }
+    }
     ao.style.background = 'rgba(255, 98, 86, .5)'
     ao.style.transition = 'ease 1s'
     ao.style.height = '70vh'
@@ -170,20 +224,32 @@ function expando () {
     setTimeout(function () {
       content[2].style.display = 'block'
       holder[2].style.display = 'block'
-      /*if (!opening[0].isPlaying || !opening[1].isPlaying || !opening[3].isPlaying || !opening[4].isPlaying) {
+      if (!opening[0].isPlaying || !opening[1].isPlaying || !opening[3].isPlaying || !opening[4].isPlaying) {
         opening[0].pause()
         opening[1].pause()
         opening[3].pause()
         opening[4].pause()
         opening[5].pause()
         opening[2].play()
-      } else {*/
+      } else {
         opening[2].play()
-    //  }
+      }
     }, 1000)
     ao.style.boxShadow = '5px 10px black'
     aol2.addEventListener('click', popup)
-  } else if (animeNumber === 3) {
+  } else if (animeNumber === 3) { // Blue Spring Ride
+    if (intViewportHeight <= 414 && intViewportWidth <= 896) {
+      if (animeNumber === 3) {
+        for (i = 0; i < smallContent.length; i++) {
+          smallContent[i].style.display = 'flex'
+        }
+        smallContent[3].style.display = 'none'
+      } else {
+        for (i = 0; i < smallContent.length; i++) {
+          smallContent[i].style.display = 'none'
+        }
+      }
+    }
     for (i = 0; i < anime.length; i++) {
       anime[i].style.opacity = '.5'
       anime[i].style.height = 'calc(100%/6)'
@@ -195,6 +261,11 @@ function expando () {
       logos[i].style.display = 'flex'
       anime[3].style.opacity = '1'
       anime[3].style.filter = 'grayscale(0%)'
+    }
+    if (intViewportHeight <= 414 && intViewportWidth <= 896) {
+      for (i = 0; i < smallContent.length; i++) {
+        anime[i].style.height = '25%'
+      }
     }
     bsr.style.background = 'rgba(108, 140, 255, .5)'
     bsr.style.transition = 'ease 1s'
@@ -216,7 +287,19 @@ function expando () {
     }, 1000)
     bsr.style.boxShadow = '5px 10px black'
     bsrl2.addEventListener('click', popup)
-  } else if (animeNumber === 4) {
+  } else if (animeNumber === 4) { // Haikyu!!
+    if (intViewportHeight <= 414 && intViewportWidth <= 896) {
+      if (animeNumber === 4) {
+        for (i = 0; i < smallContent.length; i++) {
+          smallContent[i].style.display = 'flex'
+        }
+        smallContent[4].style.display = 'none'
+      } else {
+        for (i = 0; i < smallContent.length; i++) {
+          smallContent[i].style.display = 'none'
+        }
+      }
+    }
     for (i = 0; i < anime.length; i++) {
       anime[i].style.opacity = '.5'
       anime[i].style.height = 'calc(100%/6)'
@@ -228,6 +311,11 @@ function expando () {
       logos[i].style.display = 'flex'
       anime[4].style.opacity = '1'
       anime[4].style.filter = 'grayscale(0%)'
+    }
+    if (intViewportHeight <= 414 && intViewportWidth <= 896) {
+      for (i = 0; i < smallContent.length; i++) {
+        anime[i].style.height = '25%'
+      }
     }
     hai.style.background = 'rgba(255, 142, 60, .5)'
     hai.style.transition = 'ease 1s'
@@ -249,7 +337,19 @@ function expando () {
     }, 1000)
     hai.style.boxShadow = '5px 10px black'
     hail2.addEventListener('click', popup)
-  } else if (animeNumber === 5) {
+  } else if (animeNumber === 5) { // MAJOR 2nd
+    if (intViewportHeight <= 414 && intViewportWidth <= 896) {
+      if (animeNumber === 5) {
+        for (i = 0; i < smallContent.length; i++) {
+          smallContent[i].style.display = 'flex'
+        }
+        smallContent[5].style.display = 'none'
+      } else {
+        for (i = 0; i < smallContent.length; i++) {
+          smallContent[i].style.display = 'none'
+           }
+         }
+      }
     for (i = 0; i < anime.length; i++) {
       anime[i].style.opacity = '.5'
       anime[i].style.height = 'calc(100%/6)'
@@ -261,6 +361,11 @@ function expando () {
       logos[i].style.display = 'flex'
       anime[5].style.opacity = '1'
       anime[5].style.filter = 'grayscale(0%)'
+    }
+    if (intViewportHeight <= 414 && intViewportWidth <= 896) {
+      for (i = 0; i < smallContent.length; i++) {
+        anime[i].style.height = '25%'
+      }
     }
     m2.style.transition = 'ease 1s'
     m2.style.height = '70vh'
@@ -289,7 +394,6 @@ function expando () {
     mhal2.style.cursor = 'pointer'
   }
 }
-
 function popup () {
   if (animeNumber === 0) {
     let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no`
@@ -299,4 +403,15 @@ function popup () {
 
 function reset () {
   clearInterval(heroes)
+}
+
+window.onload = function () {
+  var i
+  if (intViewportHeight <= 414) {
+    for (i = 0; i < anime.length; i++) {
+      anime[i].style.filter = 'grayscale(0)'
+    }
+    if (animeNumber === 0) {
+    }
+  }
 }
