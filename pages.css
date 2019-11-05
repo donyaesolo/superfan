@@ -1,7 +1,7 @@
 #mha {
   margin: 0;
   background: white;
-display: block;
+  display: block;
 }
 
 .jarallax-keep-img > .jarallax-img {
@@ -33,12 +33,17 @@ h1{
   font-family: title;
   font-size: 90px;
 }
-
+.container {
+  display: flex;
+  height: 600px;
+  justify-content: flex-start;
+  align-items: center;
+}
 /* gap */
 .gap {
-    padding: 50px;
     overflow: hidden;
 }
+
 
 @font-face {
   font-family: title;
@@ -48,9 +53,15 @@ h1{
   position: relative;
   top: 0px;
   left: 0px;
+  height: 100%;
+  max-width: 100%;
 }
 .slide{
+  opacity: .5;
+  margin-left: -900px;
   display: none;
   z-index: -1;
   position: relative;
+  max-height: 100%;
+  max-width: 100%;
 }

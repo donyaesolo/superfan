@@ -76,7 +76,12 @@ var ranCaHero = ['images/mha/caHero/aoyama.png', 'images/mha/caHero/bakugo.png',
   'images/mha/caHero/sato.png', 'images/mha/caHero/sero.png', 'images/mha/caHero/shoji.png',
   'images/mha/caHero/tenya.png', 'images/mha/caHero/todoroki.png', 'images/mha/caHero/tokoyami.png',
   'images/mha/caHero/toru.png', 'images/mha/caHero/tsuyu.png', 'images/mha/caHero/uraraka.png']
+
+var ranDays = ['images/days/haibara.png', 'images/days/kazama.png', 'images/days/kimishita.png',
+  'images/days/mizuki.png', 'images/days/tsuku.png', 'images/days/kurusu.png',
+  'images/days/nitobe.png', 'images/days/ooshiba.png', 'images/days/usui.png']
 var heroes
+var daysPlayers
 function expando () {
   var i
   if (animeNumber === 0) { // My Hero Academia
@@ -133,7 +138,6 @@ function expando () {
     reset()
     heroes = setInterval(function () {
       var r = Math.floor(Math.random() * (19))
-      var m = Math.floor(Math.random() * (19))
       sideImg[0].src = ranCaNor[r]
       sideImg[1].src = ranCaHero[r]
     }, 1000)
@@ -187,6 +191,13 @@ function expando () {
     }, 1000)
     days.style.boxShadow = '5px 10px black'
     daysl2.addEventListener('click', popup)
+    reset()
+    daysPlayers = setInterval(function () {
+      var r = Math.floor(Math.random() * (8))
+      var m = Math.floor(Math.random() * (8))
+      sideImg[0].src = ranDays[r]
+      sideImg[1].src = ranDays[m]
+    }, 1000)
   } else if (animeNumber === 2) { // All Out
     if (intViewportHeight <= 414 && intViewportWidth <= 896) {
       if (animeNumber === 2) {
@@ -347,9 +358,9 @@ function expando () {
       } else {
         for (i = 0; i < smallContent.length; i++) {
           smallContent[i].style.display = 'none'
-           }
-         }
+        }
       }
+    }
     for (i = 0; i < anime.length; i++) {
       anime[i].style.opacity = '.5'
       anime[i].style.height = 'calc(100%/6)'
@@ -403,6 +414,7 @@ function popup () {
 
 function reset () {
   clearInterval(heroes)
+  clearInterval(daysPlayers)
 }
 
 window.onload = function () {
