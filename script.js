@@ -79,19 +79,19 @@ var ranCaHero = ['images/mha/caHero/aoyama.png', 'images/mha/caHero/bakugo.png',
 
 var ranDays = ['images/days/haibara.png', 'images/days/kazama.png', 'images/days/kimishita.png',
   'images/days/mizuki.png', 'images/days/tsuku.png', 'images/days/kurusu.png',
-  'images/days/nitobe.png', 'images/days/ooshiba.png', 'images/days/usui.png']
+  'images/days/nitobe.png', 'images/days/ooshiba.png', 'images/days/usui.jpg']
 var heroes
 var daysPlayers
 function expando () {
   var i
   if (animeNumber === 0) { // My Hero Academia
-    if (intViewportHeight >= 375 && intViewportHeight <= 414 && intViewportWidth >= 667 && intViewportWidth <= 896) {
+    if (intViewportHeight <= 500 && intViewportWidth <= 2000) {
       if (animeNumber === 0) {
         for (i = 0; i < smallContent.length; i++) {
           smallContent[i].style.display = 'flex'
         }
         smallContent[0].style.display = 'none'
-      } else {
+      } else if (intViewportHeight >= 500) {
         for (i = 0; i < smallContent.length; i++) {
           smallContent[i].style.display = 'none'
         }
@@ -101,7 +101,7 @@ function expando () {
     for (i = 0; i < anime.length; i++) {
       anime[i].style.opacity = '.5'
       anime[i].style.height = 'calc(100%/6)'
-      anime[i].style.boxShadow = '5px 10px black'
+      anime[i].style.boxShadow = '5px 10px rgba(70, 41, 71, .5)'
       anime[i].style.opacity = '.5'
       anime[i].style.background = 'white'
       content[i].style.display = 'none'
@@ -110,12 +110,14 @@ function expando () {
       anime[0].style.opacity = '1'
       anime[0].style.filter = 'grayscale(0%)'
     }
-    if (intViewportHeight >= 375 && intViewportHeight <= 414 && intViewportWidth >= 667 && intViewportWidth <= 896) {
+    if (intViewportHeight <= 500 && intViewportWidth <= 2000) {
       for (i = 0; i < smallContent.length; i++) {
         anime[i].style.height = '25%'
       }
     }
-    mha.style.background = 'rgba(255, 251, 176, .5)'
+    mha.style.background = 'rgb(255, 251, 176)'
+    document.body.style.transition = 'ease 1s'
+    document.body.style.background = '#2A7E5C'
     mha.style.transition = 'ease 1s'
     mha.style.height = '70vh'
     mhal.style.display = 'none'
@@ -133,7 +135,7 @@ function expando () {
         opening[0].play()
       }
     }, 1000)
-    mha.style.boxShadow = '5px 10px black'
+    mha.style.boxShadow = '5px 10px rgba(70, 41, 71, .5)'
     mhal2.addEventListener('click', popup)
     reset()
     heroes = setInterval(function () {
@@ -142,13 +144,15 @@ function expando () {
       sideImg[1].src = ranCaHero[r]
     }, 1000)
   } else if (animeNumber === 1) { // Days
-    if (intViewportHeight <= 414 && intViewportWidth <= 896) {
+    document.body.style.background = '#0E0D0E'
+    document.body.style.transition = 'ease 1s'
+    if (intViewportHeight <= 500 && intViewportWidth <= 2000) {
       if (animeNumber === 1) {
         for (i = 0; i < smallContent.length; i++) {
           smallContent[i].style.display = 'flex'
         }
         smallContent[1].style.display = 'none'
-      } else {
+      } else if (intViewportHeight >= 500) {
         for (i = 0; i < smallContent.length; i++) {
           smallContent[i].style.display = 'none'
         }
@@ -157,7 +161,7 @@ function expando () {
     for (i = 0; i < anime.length; i++) {
       anime[i].style.opacity = '.5'
       anime[i].style.height = 'calc(100%/6)'
-      anime[i].style.boxShadow = '5px 10px black'
+      anime[i].style.boxShadow = '5px 10px rgba(70, 41, 71, .5)'
       anime[i].style.opacity = '.5'
       anime[i].style.background = 'white'
       content[i].style.display = 'none'
@@ -166,12 +170,12 @@ function expando () {
       anime[1].style.opacity = '1'
       anime[1].style.filter = 'grayscale(0%)'
     }
-    if (intViewportHeight <= 414 && intViewportWidth <= 896) {
+    if (intViewportHeight <= 500 && intViewportWidth <= 2000) {
       for (i = 0; i < smallContent.length; i++) {
         anime[i].style.height = '25%'
       }
     }
-    days.style.background = 'rgba(0, 0, 0, .5)'
+    days.style.background = 'rgb(40, 40, 40)'
     days.style.transition = 'ease 1s'
     days.style.height = '70vh'
     daysl.style.display = 'none'
@@ -189,7 +193,7 @@ function expando () {
         opening[1].play()
       }
     }, 1000)
-    days.style.boxShadow = '5px 10px black'
+    days.style.boxShadow = '5px 10px rgba(200, 201, 200, .5)'
     daysl2.addEventListener('click', popup)
     reset()
     daysPlayers = setInterval(function () {
@@ -199,13 +203,13 @@ function expando () {
       sideImg[1].src = ranDays[m]
     }, 1000)
   } else if (animeNumber === 2) { // All Out
-    if (intViewportHeight <= 414 && intViewportWidth <= 896) {
+    if (intViewportHeight <= 500 && intViewportWidth <= 2000) {
       if (animeNumber === 2) {
         for (i = 0; i < smallContent.length; i++) {
           smallContent[i].style.display = 'flex'
         }
         smallContent[2].style.display = 'none'
-      } else {
+      } else if (intViewportHeight >= 500) {
         for (i = 0; i < smallContent.length; i++) {
           smallContent[i].style.display = 'none'
         }
@@ -214,7 +218,7 @@ function expando () {
     for (i = 0; i < anime.length; i++) {
       anime[i].style.opacity = '.5'
       anime[i].style.height = 'calc(100%/6)'
-      anime[i].style.boxShadow = '5px 10px black'
+      anime[i].style.boxShadow = '5px 10px rgba(70, 41, 71, .5)'
       anime[i].style.opacity = '.5'
       anime[i].style.background = 'white'
       content[i].style.display = 'none'
@@ -223,12 +227,14 @@ function expando () {
       anime[2].style.opacity = '1'
       anime[2].style.filter = 'grayscale(0%)'
     }
-    if (intViewportHeight <= 414 && intViewportWidth <= 896) {
+    if (intViewportHeight <= 500 && intViewportWidth <= 2000) {
       for (i = 0; i < smallContent.length; i++) {
         anime[i].style.height = '25%'
       }
     }
-    ao.style.background = 'rgba(255, 98, 86, .5)'
+    document.body.style.background = '#283154'
+    document.body.style.transition = 'ease 1s'
+    ao.style.background = '#B04531'
     ao.style.transition = 'ease 1s'
     ao.style.height = '70vh'
     aol.style.display = 'none'
@@ -246,16 +252,16 @@ function expando () {
         opening[2].play()
       }
     }, 1000)
-    ao.style.boxShadow = '5px 10px black'
+    ao.style.boxShadow = '5px 10px rgba(233, 234, 236, .9)'
     aol2.addEventListener('click', popup)
   } else if (animeNumber === 3) { // Blue Spring Ride
-    if (intViewportHeight <= 414 && intViewportWidth <= 896) {
+    if (intViewportHeight <= 500 && intViewportWidth <= 2000) {
       if (animeNumber === 3) {
         for (i = 0; i < smallContent.length; i++) {
           smallContent[i].style.display = 'flex'
         }
         smallContent[3].style.display = 'none'
-      } else {
+      } else if (intViewportHeight >= 500) {
         for (i = 0; i < smallContent.length; i++) {
           smallContent[i].style.display = 'none'
         }
@@ -264,7 +270,7 @@ function expando () {
     for (i = 0; i < anime.length; i++) {
       anime[i].style.opacity = '.5'
       anime[i].style.height = 'calc(100%/6)'
-      anime[i].style.boxShadow = '5px 10px black'
+      anime[i].style.boxShadow = '5px 10px rgba(70, 41, 71, .5)'
       anime[i].style.opacity = '.5'
       anime[i].style.background = 'white'
       content[i].style.display = 'none'
@@ -273,11 +279,13 @@ function expando () {
       anime[3].style.opacity = '1'
       anime[3].style.filter = 'grayscale(0%)'
     }
-    if (intViewportHeight <= 414 && intViewportWidth <= 896) {
+    if (intViewportHeight <= 500 && intViewportWidth <= 2000) {
       for (i = 0; i < smallContent.length; i++) {
         anime[i].style.height = '25%'
       }
     }
+    document.body.style.background = '#C1D9CB'
+    document.body.style.transition = 'ease 1s'
     bsr.style.background = 'rgba(108, 140, 255, .5)'
     bsr.style.transition = 'ease 1s'
     bsr.style.height = '70vh'
@@ -296,16 +304,16 @@ function expando () {
         opening[3].play()
       }
     }, 1000)
-    bsr.style.boxShadow = '5px 10px black'
+    bsr.style.boxShadow = '5px 10px rgba(70, 41, 71, .5)'
     bsrl2.addEventListener('click', popup)
   } else if (animeNumber === 4) { // Haikyu!!
-    if (intViewportHeight <= 414 && intViewportWidth <= 896) {
+    if (intViewportHeight <= 500 && intViewportWidth <= 2000) {
       if (animeNumber === 4) {
         for (i = 0; i < smallContent.length; i++) {
           smallContent[i].style.display = 'flex'
         }
         smallContent[4].style.display = 'none'
-      } else {
+      } else if (intViewportHeight >= 500) {
         for (i = 0; i < smallContent.length; i++) {
           smallContent[i].style.display = 'none'
         }
@@ -314,7 +322,7 @@ function expando () {
     for (i = 0; i < anime.length; i++) {
       anime[i].style.opacity = '.5'
       anime[i].style.height = 'calc(100%/6)'
-      anime[i].style.boxShadow = '5px 10px black'
+      anime[i].style.boxShadow = '5px 10px rgba(70, 41, 71, .5)'
       anime[i].style.opacity = '.5'
       anime[i].style.background = 'white'
       content[i].style.display = 'none'
@@ -323,12 +331,14 @@ function expando () {
       anime[4].style.opacity = '1'
       anime[4].style.filter = 'grayscale(0%)'
     }
-    if (intViewportHeight <= 414 && intViewportWidth <= 896) {
+    if (intViewportHeight <= 500 && intViewportWidth <= 2000) {
       for (i = 0; i < smallContent.length; i++) {
         anime[i].style.height = '25%'
       }
     }
-    hai.style.background = 'rgba(255, 142, 60, .5)'
+    document.body.style.background = '#323345'
+    document.body.style.transition = 'ease 1s'
+    hai.style.background = 'rgb(255, 142, 60)'
     hai.style.transition = 'ease 1s'
     hai.style.height = '70vh'
     hail.style.display = 'none'
@@ -346,16 +356,16 @@ function expando () {
         opening[4].play()
       }
     }, 1000)
-    hai.style.boxShadow = '5px 10px black'
+    hai.style.boxShadow = '5px 10px rgba(226, 78, 31, .8)'
     hail2.addEventListener('click', popup)
   } else if (animeNumber === 5) { // MAJOR 2nd
-    if (intViewportHeight <= 414 && intViewportWidth <= 896) {
+    if (intViewportHeight <= 500 && intViewportWidth <= 2000) {
       if (animeNumber === 5) {
         for (i = 0; i < smallContent.length; i++) {
           smallContent[i].style.display = 'flex'
         }
         smallContent[5].style.display = 'none'
-      } else {
+      } else if (intViewportHeight >= 500) {
         for (i = 0; i < smallContent.length; i++) {
           smallContent[i].style.display = 'none'
         }
@@ -364,7 +374,7 @@ function expando () {
     for (i = 0; i < anime.length; i++) {
       anime[i].style.opacity = '.5'
       anime[i].style.height = 'calc(100%/6)'
-      anime[i].style.boxShadow = '5px 10px black'
+      anime[i].style.boxShadow = '5px 10px rgba(70, 41, 71, .5)'
       anime[i].style.opacity = '.5'
       anime[i].style.background = 'white'
       content[i].style.display = 'none'
@@ -373,11 +383,13 @@ function expando () {
       anime[5].style.opacity = '1'
       anime[5].style.filter = 'grayscale(0%)'
     }
-    if (intViewportHeight <= 414 && intViewportWidth <= 896) {
+    if (intViewportHeight <= 500 && intViewportWidth <= 2000) {
       for (i = 0; i < smallContent.length; i++) {
         anime[i].style.height = '25%'
       }
     }
+    document.body.style.background = '#D94343'
+    document.body.style.transition = 'ease 1s'
     m2.style.transition = 'ease 1s'
     m2.style.height = '70vh'
     m2l.style.display = 'none'
@@ -395,8 +407,8 @@ function expando () {
         opening[5].play()
       }
     }, 1000)
-    m2.style.background = 'rgba(79, 89, 255, .5)'
-    m2.style.boxShadow = '5px 10px black'
+    m2.style.background = 'rgb(79, 89, 255)'
+    m2.style.boxShadow = '5px 10px rgba(70, 41, 71, .5)'
     m2l2.addEventListener('click', popup)
   }
 
@@ -415,15 +427,4 @@ function popup () {
 function reset () {
   clearInterval(heroes)
   clearInterval(daysPlayers)
-}
-
-window.onload = function () {
-  var i
-  if (intViewportHeight <= 414) {
-    for (i = 0; i < anime.length; i++) {
-      anime[i].style.filter = 'grayscale(0)'
-    }
-    if (animeNumber === 0) {
-    }
-  }
 }

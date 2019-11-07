@@ -19,17 +19,20 @@ div{
 .logo{
   background: white;
   height: calc(100%/6);
+  overflow-y: auto;
   display: flex;
   margin-bottom: 20px;
   justify-content: center;
   align-items: center;
-  -webkit-filter: grayscale(90%);
+  filter: grayscale(90%);
 }
 .logo:hover {
   transition: ease 1s;
-  -webkit-filter: grayscale(0%);
+  -webkit-filter: grayscale(0);
 }
 .logo-img{
+  max-width: 100%;
+  max-height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,21 +49,24 @@ div{
   justify-content: center;
   align-items: center;
 }
+.space{
+  margin-left: 10px;
+}
 .sideImg {
   max-width: 100%;
   max-height: 100%;
 }
 #mha{
-  box-shadow: 5px  5px black;
-  overflow: scroll;
+  box-shadow: 5px  5px 5px rgba(70, 41, 71, .5);
 }
 #mha:hover{
   transition: ease 1s;
   box-shadow: 10px 10px yellow;
   transform: scale(1.01);
+  filter: grayscale(0);
 }
 #days{
-  box-shadow: 5px  5px black;
+  box-shadow: 5px  5px 5px rgba(70, 41, 71, .5);
 }
 #days:hover{
   transition: ease 1s;
@@ -68,7 +74,7 @@ div{
   transform: scale(1.01);
 }
 #ao{
-  box-shadow: 5px  5px black;
+  box-shadow: 5px  5px 5px rgba(70, 41, 71, .5);
 }
 #ao:hover{
   transition: ease 1s;
@@ -76,7 +82,7 @@ div{
   transform: scale(1.01);
 }
 #bsr{
-  box-shadow: 5px  5px black;
+  box-shadow: 5px  5px 5px rgba(70, 41, 71, .5);
 }
 #bsr:hover{
   transition: ease 1s;
@@ -84,7 +90,7 @@ div{
   transform: scale(1.01);
 }
 #hai{
-  box-shadow: 5px  5px black;
+  box-shadow: 5px  5px 5px rgba(70, 41, 71, .5);
 }
 #hai:hover{
   transition: ease 1s;
@@ -92,7 +98,7 @@ div{
   transform: scale(1.01);
 }
 #m2{
-  box-shadow: 5px  5px black;
+  box-shadow: 5px  5px 5px rgba(70, 41, 71, .5);
 }
 #m2:hover{
   transition: ease 1s;
@@ -110,7 +116,9 @@ img {
   height: 90%;
   width: 50%;
   padding: 20px;
-  overflow-y: scroll;
+  overflow-y: auto;
+}
+.days {
 }
 .holder {
   display: none;
@@ -132,60 +140,17 @@ video {
 .content-small{
   display: none;
 }
-
 @font-face {
   font-family: text;
   src: url(fonts/text.otf);
 }
 h1{
   font-family: text;
-}
-@media screen and (max-width: 414px){
-  div{
-    padding: 0px;
-  }
-  .logo {
-
-    display: flex;
-    flex-direction: column-reverse;
-    width: 100%;
-
-  }
-  .content{
-    border-radius: 0px;
-    margin-top: 20px;
-    width: 90%;
-  }
-  .holder{
-    width: 90%;
-  }
-  video {
-    width: 100%;
-    height: 100%;
-  }
-  #container {
-    width: 100%;
-    filter: grayscale(0);
-    opacity: 1;
-  }
-  .side-bar {
-    display: none;
-  }
-  .content-small{
-    display: none;
-  }
-  #hai-logo {
-    width: 98%;
-    height: 98%;
-  }
-  #bsr-logo{
-    width: 98%;
-    height: 98%;
-  }
-
+  font-size: auto
 }
 
-@media screen and (max-height: 414px){
+
+@media screen and (max-height: 500px){
   .content {
     border-radius: 0px;
     display: none;
@@ -202,6 +167,7 @@ h1{
     height: 100%;
   }
   .logo {
+    -webkit-filter: grayscale(0);
     height: 25%;
     width: 100%;
   }
@@ -223,9 +189,58 @@ h1{
     align-items: center;
     width: 50%;
     height: 90%;
+    padding-right: 20%;
   }
   .right {
-    padding-left: 50px;
+    padding-right: 0%;
+    padding-left: 20%;
    text-align: right;
+  }
+}
+@media screen and (max-width: 642px){
+  div{
+    padding: 0px;
+  }
+  .logo {
+    filter: grayscale(0);
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+  .content{
+    border-radius: 0px;
+    margin-top: 20px;
+    width: 90%;
+  }
+  .holder{
+    width: 60%;
+  }
+  video {
+    width: 100%;
+    height: 100%;
+  }
+  #container {
+    width: 100%;
+    opacity: 1;
+  }
+  .side-bar {
+    display: none;
+  }
+  .content-small{
+    display: none;
+  }
+  #hai-logo {
+    width: 98%;
+    height: 98%;
+  }
+  #bsr-logo{
+    width: 98%;
+    height: 98%;
+  }
+
+}
+@media screen and (max-width: 414px){
+  .holder{
+    width: 90%;
   }
 }
