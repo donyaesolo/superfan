@@ -4,7 +4,7 @@ var days = document.getElementById('days')
 var ao = document.getElementById('ao')
 var bsr = document.getElementById('bsr')
 var hai = document.getElementById('hai')
-var m2 = document.getElementById('m2')
+var ff = document.getElementById('ff')
 var content = document.getElementsByClassName('content')
 var holder = document.getElementsByClassName('holder')
 // logos
@@ -13,19 +13,19 @@ var daysl = document.getElementById('days-logo')
 var aol = document.getElementById('ao-logo')
 var bsrl = document.getElementById('bsr-logo')
 var hail = document.getElementById('hai-logo')
-var m2l = document.getElementById('m2-logo')
+var ffl = document.getElementById('ff-logo')
 // Second Logo
 var mhal2 = document.getElementById('mha-logo2')
 var daysl2 = document.getElementById('days-logo2')
 var aol2 = document.getElementById('ao-logo2')
 var bsrl2 = document.getElementById('bsr-logo2')
 var hail2 = document.getElementById('hai-logo2')
-var m2l2 = document.getElementById('m2-logo2')
+var ffl2 = document.getElementById('ff-logo2')
 
 var sideImg = document.getElementsByClassName('sideImg')
 // Div Array
-var anime = [mha, days, ao, bsr, hai, m2]
-var logos = [mhal, daysl, aol, bsrl, hail, m2l]
+var anime = [mha, days, ao, bsr, hai, ff]
+var logos = [mhal, daysl, aol, bsrl, hail, ffl]
 var animeNumber
 var opening = document.getElementsByClassName('video')
 var intViewportHeight = window.innerHeight
@@ -56,7 +56,7 @@ function haikyu () {
   expando()
 }
 
-function major () {
+function fire () {
   animeNumber = 5
   expando()
 }
@@ -79,9 +79,35 @@ var ranCaHero = ['images/mha/caHero/aoyama.png', 'images/mha/caHero/bakugo.png',
 
 var ranDays = ['images/days/haibara.png', 'images/days/kazama.png', 'images/days/kimishita.png',
   'images/days/mizuki.png', 'images/days/tsuku.png', 'images/days/kurusu.png',
-  'images/days/nitobe.png', 'images/days/ooshiba.png', 'images/days/usui.jpg']
+  'images/days/nitobe.png', 'images/days/ooshiba.png', 'images/days/usui.png',
+  'images/days/inohara.png', 'images/days/nakijin.png', 'images/days/naoki.png',
+  'images/days/ubukata.png']
+
+var ranAO = ['images/ao/atsuta.png', 'images/ao/gion.png', 'images/ao/haokari.png',
+  'images/ao/hirano.png', 'images/ao/Hirota.png', 'images/ao/hyosu.png',
+  'images/ao/Iwashimizu.png', 'images/ao/kamo.png', 'images/ao/kashima.png',
+  'images/ao/kasuga.png', 'images/ao/kibi.png', 'images/ao/kifune.png',
+  'images/ao/kitamachi.png', 'images/ao/marodo.png', 'images/ao/michio.png',
+  'images/ao/mikami.png', 'images/ao/mutsumi.png', 'images/ao/Oharnano.png',
+  'images/ao/ohie.png', 'images/ao/sekizan.png', 'images/ao/shingo.png',
+  'images/ao/shinshi.png', 'images/ao/suwa.png','images/ao/takebe.png']
+
+var ranBSR = ['images/BSR/futaba.png', 'images/BSR/kou.png', 'images/BSR/shuko.png',
+  'images/BSR/aya.png', 'images/BSR/yuri.png']
+var ranHai = ['images/hai/Karasuno/standby/sugawara.png', 'images/hai/Karasuno/standby/asahi.png',
+  'images/hai/Karasuno/standby/nishinoya.png', 'images/hai/Karasuno/standby/tanaka.png',
+  'images/hai/Karasuno/standby/ennoshita.png', 'images/hai/Karasuno/standby/kinoshita.png',
+  'images/hai/Karasuno/standby/narita.png', 'images/hai/Karasuno/standby/kageyama.png',
+  'images/hai/Karasuno/standby/hinata.png', 'images/hai/Karasuno/standby/tsukishima.png',
+  'images/hai/Karasuno/standby/daichi.png', 'images/hai/Karasuno/standby/yamaguchi.png']
+var ranFf = ['images/ff/akitaru.png', 'images/ff/arthur.png', 'images/ff/iris.png',
+  'images/ff/maki.png', 'images/ff/shinra.png', 'images/ff/takehisa.png']
 var heroes
 var daysPlayers
+var rugbyPlayers
+var Haru
+var haiPlayers
+var ff8
 function expando () {
   var i
   if (animeNumber === 0) { // My Hero Academia
@@ -104,6 +130,7 @@ function expando () {
       anime[i].style.boxShadow = '5px 10px rgba(70, 41, 71, .5)'
       anime[i].style.opacity = '.5'
       anime[i].style.background = 'white'
+      anime[i].style.filter = 'grayscale(90%)'
       content[i].style.display = 'none'
       holder[i].style.display = 'none'
       logos[i].style.display = 'flex'
@@ -115,6 +142,7 @@ function expando () {
         anime[i].style.height = '25%'
       }
     }
+    document.body.style.cursor = 'url(images/cursors/mha.cur), auto'
     mha.style.background = 'rgb(255, 251, 176)'
     document.body.style.transition = 'ease 1s'
     document.body.style.background = '#2A7E5C'
@@ -134,7 +162,7 @@ function expando () {
       } else {
         opening[0].play()
       }
-    }, 1000)
+    }, 400)
     mha.style.boxShadow = '5px 10px rgba(70, 41, 71, .5)'
     mhal2.addEventListener('click', popup)
     reset()
@@ -158,11 +186,13 @@ function expando () {
         }
       }
     }
+    days.addEventListener('mouseover', stopHover)
     for (i = 0; i < anime.length; i++) {
       anime[i].style.opacity = '.5'
       anime[i].style.height = 'calc(100%/6)'
       anime[i].style.boxShadow = '5px 10px rgba(70, 41, 71, .5)'
       anime[i].style.opacity = '.5'
+      anime[i].style.filter = 'grayscale(90%)'
       anime[i].style.background = 'white'
       content[i].style.display = 'none'
       holder[i].style.display = 'none'
@@ -175,6 +205,7 @@ function expando () {
         anime[i].style.height = '25%'
       }
     }
+    document.body.style.cursor = 'url(images/cursors/days.cur), auto'
     days.style.background = 'rgb(40, 40, 40)'
     days.style.transition = 'ease 1s'
     days.style.height = '70vh'
@@ -197,8 +228,8 @@ function expando () {
     daysl2.addEventListener('click', popup)
     reset()
     daysPlayers = setInterval(function () {
-      var r = Math.floor(Math.random() * (8))
-      var m = Math.floor(Math.random() * (8))
+      var r = Math.floor(Math.random() * (13))
+      var m = Math.floor(Math.random() * (13))
       sideImg[0].src = ranDays[r]
       sideImg[1].src = ranDays[m]
     }, 1000)
@@ -215,11 +246,13 @@ function expando () {
         }
       }
     }
+    ao.addEventListener('mouseover', stopHover)
     for (i = 0; i < anime.length; i++) {
       anime[i].style.opacity = '.5'
       anime[i].style.height = 'calc(100%/6)'
       anime[i].style.boxShadow = '5px 10px rgba(70, 41, 71, .5)'
       anime[i].style.opacity = '.5'
+      anime[i].style.filter = 'grayscale(90%)'
       anime[i].style.background = 'white'
       content[i].style.display = 'none'
       holder[i].style.display = 'none'
@@ -232,6 +265,7 @@ function expando () {
         anime[i].style.height = '25%'
       }
     }
+    document.body.style.cursor = 'url(images/cursors/ao.cur), auto'
     document.body.style.background = '#283154'
     document.body.style.transition = 'ease 1s'
     ao.style.background = '#B04531'
@@ -254,6 +288,13 @@ function expando () {
     }, 1000)
     ao.style.boxShadow = '5px 10px rgba(233, 234, 236, .9)'
     aol2.addEventListener('click', popup)
+    reset()
+    rugbyPlayers = setInterval(function () {
+      var r = Math.floor(Math.random() * (24))
+      var m = Math.floor(Math.random() * (24))
+      sideImg[0].src = ranAO[r]
+      sideImg[1].src = ranAO[m]
+    }, 1000)
   } else if (animeNumber === 3) { // Blue Spring Ride
     if (intViewportHeight <= 500 && intViewportWidth <= 2000) {
       if (animeNumber === 3) {
@@ -267,11 +308,13 @@ function expando () {
         }
       }
     }
+    bsr.addEventListener('mouseover', stopHover)
     for (i = 0; i < anime.length; i++) {
       anime[i].style.opacity = '.5'
       anime[i].style.height = 'calc(100%/6)'
       anime[i].style.boxShadow = '5px 10px rgba(70, 41, 71, .5)'
       anime[i].style.opacity = '.5'
+      anime[i].style.filter = 'grayscale(90%)'
       anime[i].style.background = 'white'
       content[i].style.display = 'none'
       holder[i].style.display = 'none'
@@ -284,6 +327,7 @@ function expando () {
         anime[i].style.height = '25%'
       }
     }
+    document.body.style.cursor = 'url(images/cursors/bsr.cur), auto'
     document.body.style.background = '#C1D9CB'
     document.body.style.transition = 'ease 1s'
     bsr.style.background = 'rgba(108, 140, 255, .5)'
@@ -304,6 +348,13 @@ function expando () {
         opening[3].play()
       }
     }, 1000)
+    reset()
+    Haru = setInterval(function () {
+      var r = Math.floor(Math.random() * (5))
+      var m = Math.floor(Math.random() * (5))
+      sideImg[0].src = ranBSR[r]
+      sideImg[1].src = ranBSR[m]
+    }, 1000)
     bsr.style.boxShadow = '5px 10px rgba(70, 41, 71, .5)'
     bsrl2.addEventListener('click', popup)
   } else if (animeNumber === 4) { // Haikyu!!
@@ -319,11 +370,13 @@ function expando () {
         }
       }
     }
+    hai.addEventListener('mouseover', stopHover)
     for (i = 0; i < anime.length; i++) {
       anime[i].style.opacity = '.5'
       anime[i].style.height = 'calc(100%/6)'
       anime[i].style.boxShadow = '5px 10px rgba(70, 41, 71, .5)'
       anime[i].style.opacity = '.5'
+      anime[i].style.filter = 'grayscale(90%)'
       anime[i].style.background = 'white'
       content[i].style.display = 'none'
       holder[i].style.display = 'none'
@@ -336,6 +389,7 @@ function expando () {
         anime[i].style.height = '25%'
       }
     }
+    document.body.style.cursor = 'url(images/cursors/hai.cur), auto'
     document.body.style.background = '#323345'
     document.body.style.transition = 'ease 1s'
     hai.style.background = 'rgb(255, 142, 60)'
@@ -356,9 +410,16 @@ function expando () {
         opening[4].play()
       }
     }, 1000)
+    reset()
+    haiPlayers = setInterval(function () {
+      var r = Math.floor(Math.random() * (11))
+      var m = Math.floor(Math.random() * (11))
+      sideImg[0].src = ranHai[r]
+      sideImg[1].src = ranHai[m]
+    }, 1000)
     hai.style.boxShadow = '5px 10px rgba(226, 78, 31, .8)'
     hail2.addEventListener('click', popup)
-  } else if (animeNumber === 5) { // MAJOR 2nd
+  } else if (animeNumber === 5) { // Fire Force
     if (intViewportHeight <= 500 && intViewportWidth <= 2000) {
       if (animeNumber === 5) {
         for (i = 0; i < smallContent.length; i++) {
@@ -371,11 +432,13 @@ function expando () {
         }
       }
     }
+    ff.addEventListener('mouseover', stopHover)
     for (i = 0; i < anime.length; i++) {
       anime[i].style.opacity = '.5'
       anime[i].style.height = 'calc(100%/6)'
       anime[i].style.boxShadow = '5px 10px rgba(70, 41, 71, .5)'
       anime[i].style.opacity = '.5'
+      anime[i].style.filter = 'grayscale(90%)'
       anime[i].style.background = 'white'
       content[i].style.display = 'none'
       holder[i].style.display = 'none'
@@ -388,11 +451,12 @@ function expando () {
         anime[i].style.height = '25%'
       }
     }
-    document.body.style.background = '#D94343'
+    document.body.style.cursor = 'url(images/cursors/ff.png), auto'
+    document.body.style.background = '#2F2F2F'
     document.body.style.transition = 'ease 1s'
-    m2.style.transition = 'ease 1s'
-    m2.style.height = '70vh'
-    m2l.style.display = 'none'
+    ff.style.transition = 'ease 1s'
+    ff.style.height = '70vh'
+    ffl.style.display = 'none'
     setTimeout(function () {
       content[5].style.display = 'block'
       holder[5].style.display = 'block'
@@ -407,14 +471,31 @@ function expando () {
         opening[5].play()
       }
     }, 1000)
-    m2.style.background = 'rgb(79, 89, 255)'
-    m2.style.boxShadow = '5px 10px rgba(70, 41, 71, .5)'
-    m2l2.addEventListener('click', popup)
+    reset()
+    ff8 = setInterval(function () {
+      var r = Math.floor(Math.random() * (5))
+      var m = Math.floor(Math.random() * (5))
+      sideImg[0].src = ranFf[r]
+      sideImg[1].src = ranFf[m]
+    }, 1000)
+    ff.style.background = 'rgb(132, 208, 217)'
+    ff.style.boxShadow = '5px 10px rgb(226, 201, 45)'
+    ffl2.addEventListener('click', popup)
   }
 
   function stopHover () {
     mha.style.transform = 'scale(1)'
     mhal2.style.cursor = 'pointer'
+    days.style.transform = 'scale(1)'
+    daysl2.style.cursor = 'pointer'
+    ao.style.transform = 'scale(1)'
+    aol2.style.cursor = 'pointer'
+    bsr.style.transform = 'scale(1)'
+    bsrl2.style.cursor = 'pointer'
+    hai.style.transform = 'scale(1)'
+    hail2.style.cursor = 'pointer'
+    ff.style.transform = 'scale(1)'
+    ffl2.style.cursor = 'pointer'
   }
 }
 function popup () {
@@ -422,9 +503,33 @@ function popup () {
     let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no`
     open('mha.html', 'test', params)
   }
+  if (animeNumber === 1) {
+    let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no`
+    open('days.html', 'test', params)
+  }
+  if (animeNumber === 2) {
+    let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no`
+    open('ao.html', 'test', params)
+  }
+  if (animeNumber === 3) {
+    let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no`
+    open('bsr.html', 'test', params)
+  }
+  if (animeNumber === 4) {
+    let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no`
+    open('hai.html', 'test', params)
+  }
+  if (animeNumber === 5) {
+    let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no`
+    open('ff.html', 'test', params)
+  }
 }
 
 function reset () {
   clearInterval(heroes)
   clearInterval(daysPlayers)
+  clearInterval(rugbyPlayers)
+  clearInterval(Haru)
+  clearInterval(haiPlayers)
+  clearInterval(ff8)
 }

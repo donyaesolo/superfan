@@ -1,0 +1,181 @@
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(61, 59, 61, .5);
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.spacer{
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+.tt{
+  margin: 0;
+}
+h1{
+  font-family: hai;
+}
+@font-face{
+  font-family: hai;
+  src: url(fonts/hai.ttf);
+}
+@font-face {
+  font-family: title;
+  src: url(fonts/title.ttf)
+}
+.header{
+  display: flex;
+  width: 100%;
+  background: orange;
+  justify-content: center;
+  align-items: center;
+}
+.flex{
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+.players {
+  background: white;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(4, 25%);
+  grid-template-columns: repeat(3, calc(100%/3));
+}
+.items {
+  margin-left: 20px;
+
+  height: 34%;
+  overflow: hidden;
+  padding: 5px;
+  display: flex;
+  transition: 1s;
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    border: 1px solid white;
+}
+.items:hover{
+  border: 1px solid #D1D1D1;
+  box-shadow: 10px 10px #D1D1D1;
+  transform: scale(1.01);
+}
+.img-container {
+  overflow: hidden;
+  height: 500px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profile{
+  margin-top: 350px;
+}
+.su{
+    margin-top: 300px;
+}
+.as{
+    margin-top: 450px;
+}
+.ni{
+  margin-top: 195px;
+}
+.ki{
+  margin-top: 310px;
+}
+.en{
+  margin-top: 330px;
+}
+.ta {
+  margin-top: 340px;
+  margin-right: 70px;
+}
+.ka{
+  margin-top: 410px;
+}
+.hi{
+  margin-top: 260px;
+}
+.ya{
+  margin-top: 370px;
+}
+.number {
+  top: -140px;
+  left: 20px;
+  height: 100%;
+  position: relative;
+  opacity: .1;
+}
+.num {
+  font-family: title;
+  color: grey;
+  font-size: 170px;
+}
+.number.ni {
+  top: -240px;
+  left: -10px;
+}
+.number.ts {
+  top: -140px;
+  left: -10px;
+}
+.number.yam {
+  top: -140px;
+  left: 10px;
+}
+.name {
+  z-index: 5;
+  position: relative;
+  top: 30px;
+  left: 30px;
+}
+.name.yu {
+  top: 30px;
+  left: 10px;
+}
+.name.ts {
+  top: 30px;
+  left: 0px;
+}
+.name.yam {
+  top: 30px;
+  left: -10px;
+}
+.na{
+  font-size: 30px;
+}
+.jarallax-img {
+  background: white;
+}
+ul{
+  display: grid;
+  grid-template-rows: repeat(6, calc(100%/6));
+  grid-template-columns: repeat(2, 50%);
+}
+.menu{
+  top: 5%;
+  height: 350px;
+  background: #2A3659;
+}
+.box{
+  background: rgb(255, 142, 60)
+}
