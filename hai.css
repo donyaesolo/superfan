@@ -150,7 +150,7 @@ h1{
 }
 .name.yu {
   top: 30px;
-  left: 10px;
+  left: -10px;
 }
 .name.ts {
   top: 30px;
@@ -178,4 +178,7 @@ ul{
 }
 .box{
   background: rgb(255, 142, 60)
+}
+.top-box{
+  height: 70px;
 }

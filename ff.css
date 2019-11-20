@@ -73,3 +73,13 @@ div.clickEffect{
   width: 100%;
   top: 35px;
 }
+.bigTitle{
+  width: 400px;
+}
+ul{
+  display: block;
+}
+.players{
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: repeat(3, calc(100%/3));
+}

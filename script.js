@@ -24,8 +24,8 @@ var ffl2 = document.getElementById('ff-logo2')
 
 var sideImg = document.getElementsByClassName('sideImg')
 // Div Array
-var anime = [mha, days, ao, bsr, hai, ff]
-var logos = [mhal, daysl, aol, bsrl, hail, ffl]
+var anime = [mha, days, bsr, hai, ff]
+var logos = [mhal, daysl, bsrl, hail, ffl]
 var animeNumber
 var opening = document.getElementsByClassName('video')
 var intViewportHeight = window.innerHeight
@@ -41,10 +41,10 @@ function soccer () {
   expando()
 }
 
-function rugby () {
+/*function rugby () {
   animeNumber = 2
   expando()
-}
+}*/
 
 function haru () {
   animeNumber = 3
@@ -157,7 +157,7 @@ function expando () {
         opening[2].pause()
         opening[3].pause()
         opening[4].pause()
-        opening[5].pause()
+        //opening[5].pause()
         opening[0].play()
       } else {
         opening[0].play()
@@ -218,7 +218,7 @@ function expando () {
         opening[2].pause()
         opening[3].pause()
         opening[4].pause()
-        opening[5].pause()
+        //opening[5].pause()
         opening[1].play()
       } else {
         opening[1].play()
@@ -246,7 +246,7 @@ function expando () {
         }
       }
     }
-    ao.addEventListener('mouseover', stopHover)
+  /*  ao.addEventListener('mouseover', stopHover)
     for (i = 0; i < anime.length; i++) {
       anime[i].style.opacity = '.5'
       anime[i].style.height = 'calc(100%/6)'
@@ -294,10 +294,72 @@ function expando () {
       var m = Math.floor(Math.random() * (24))
       sideImg[0].src = ranAO[r]
       sideImg[1].src = ranAO[m]
-    }, 1000)
+    }, 1000)*/
   } else if (animeNumber === 3) { // Blue Spring Ride
     if (intViewportHeight <= 500 && intViewportWidth <= 2000) {
       if (animeNumber === 3) {
+        for (i = 0; i < smallContent.length; i++) {
+          smallContent[i].style.display = 'flex'
+        }
+        smallContent[2].style.display = 'none'
+      } else if (intViewportHeight >= 500) {
+        for (i = 0; i < smallContent.length; i++) {
+          smallContent[i].style.display = 'none'
+        }
+      }
+    }
+    bsr.addEventListener('mouseover', stopHover)
+    for (i = 0; i < anime.length; i++) {
+      anime[i].style.opacity = '.5'
+      anime[i].style.height = 'calc(100%/6)'
+      anime[i].style.boxShadow = '5px 10px rgba(70, 41, 71, .5)'
+      anime[i].style.opacity = '.5'
+      anime[i].style.filter = 'grayscale(90%)'
+      anime[i].style.background = 'white'
+      content[i].style.display = 'none'
+      holder[i].style.display = 'none'
+      logos[i].style.display = 'flex'
+      anime[2].style.opacity = '1'
+      anime[2].style.filter = 'grayscale(0%)'
+    }
+    if (intViewportHeight <= 500 && intViewportWidth <= 2000) {
+      for (i = 0; i < smallContent.length; i++) {
+        anime[i].style.height = '25%'
+      }
+    }
+    document.body.style.cursor = 'url(images/cursors/bsr.cur), auto'
+    document.body.style.background = '#C1D9CB'
+    document.body.style.transition = 'ease 1s'
+    bsr.style.background = 'rgba(108, 140, 255, .5)'
+    bsr.style.transition = 'ease 1s'
+    bsr.style.height = '70vh'
+    bsrl.style.display = 'none'
+    setTimeout(function () {
+      content[2].style.display = 'block'
+      holder[2].style.display = 'block'
+      if (!opening[0].isPlaying || !opening[1].isPlaying || !opening[2].isPlaying || !opening[4].isPlaying || !opening[5].isPlaying) {
+        opening[0].pause()
+        opening[1].pause()
+        //opening[2].pause()
+        opening[4].pause()
+        //opening[5].pause()
+        opening[2].play()
+      } else {
+        opening[2].play()
+      }
+    }, 1000)
+    reset()
+    Haru = setInterval(function () {
+      var r = Math.floor(Math.random() * (5))
+      var m = Math.floor(Math.random() * (5))
+      sideImg[0].src = ranBSR[r]
+      sideImg[1].src = ranBSR[m]
+    }, 1000)
+    bsr.style.boxShadow = '5px 10px rgba(70, 41, 71, .5)'
+    bsrl2.addEventListener('click', popup)
+  } else if (animeNumber === 4) { // Haikyu!!
+    if (intViewportHeight <= 500 && intViewportWidth <= 2000) {
+      if (animeNumber === 4) {
         for (i = 0; i < smallContent.length; i++) {
           smallContent[i].style.display = 'flex'
         }
@@ -308,7 +370,7 @@ function expando () {
         }
       }
     }
-    bsr.addEventListener('mouseover', stopHover)
+    hai.addEventListener('mouseover', stopHover)
     for (i = 0; i < anime.length; i++) {
       anime[i].style.opacity = '.5'
       anime[i].style.height = 'calc(100%/6)'
@@ -327,39 +389,39 @@ function expando () {
         anime[i].style.height = '25%'
       }
     }
-    document.body.style.cursor = 'url(images/cursors/bsr.cur), auto'
-    document.body.style.background = '#C1D9CB'
+    document.body.style.cursor = 'url(images/cursors/hai.cur), auto'
+    document.body.style.background = '#323345'
     document.body.style.transition = 'ease 1s'
-    bsr.style.background = 'rgba(108, 140, 255, .5)'
-    bsr.style.transition = 'ease 1s'
-    bsr.style.height = '70vh'
-    bsrl.style.display = 'none'
+    hai.style.background = 'rgb(255, 142, 60)'
+    hai.style.transition = 'ease 1s'
+    hai.style.height = '70vh'
+    hail.style.display = 'none'
     setTimeout(function () {
       content[3].style.display = 'block'
       holder[3].style.display = 'block'
-      if (!opening[0].isPlaying || !opening[1].isPlaying || !opening[2].isPlaying || !opening[4].isPlaying || !opening[5].isPlaying) {
+      if (!opening[0].isPlaying || !opening[1].isPlaying || !opening[2].isPlaying || !opening[3].isPlaying || !opening[5].isPlaying) {
         opening[0].pause()
         opening[1].pause()
         opening[2].pause()
-        opening[4].pause()
-        opening[5].pause()
+      //  opening[3].pause()
+      //  opening[5].pause()
         opening[3].play()
       } else {
         opening[3].play()
       }
     }, 1000)
     reset()
-    Haru = setInterval(function () {
-      var r = Math.floor(Math.random() * (5))
-      var m = Math.floor(Math.random() * (5))
-      sideImg[0].src = ranBSR[r]
-      sideImg[1].src = ranBSR[m]
+    haiPlayers = setInterval(function () {
+      var r = Math.floor(Math.random() * (11))
+      var m = Math.floor(Math.random() * (11))
+      sideImg[0].src = ranHai[r]
+      sideImg[1].src = ranHai[m]
     }, 1000)
-    bsr.style.boxShadow = '5px 10px rgba(70, 41, 71, .5)'
-    bsrl2.addEventListener('click', popup)
-  } else if (animeNumber === 4) { // Haikyu!!
+    hai.style.boxShadow = '5px 10px rgba(226, 78, 31, .8)'
+    hail2.addEventListener('click', popup)
+  } else if (animeNumber === 5) { // Fire Force
     if (intViewportHeight <= 500 && intViewportWidth <= 2000) {
-      if (animeNumber === 4) {
+      if (animeNumber === 5) {
         for (i = 0; i < smallContent.length; i++) {
           smallContent[i].style.display = 'flex'
         }
@@ -370,7 +432,7 @@ function expando () {
         }
       }
     }
-    hai.addEventListener('mouseover', stopHover)
+    ff.addEventListener('mouseover', stopHover)
     for (i = 0; i < anime.length; i++) {
       anime[i].style.opacity = '.5'
       anime[i].style.height = 'calc(100%/6)'
@@ -389,68 +451,6 @@ function expando () {
         anime[i].style.height = '25%'
       }
     }
-    document.body.style.cursor = 'url(images/cursors/hai.cur), auto'
-    document.body.style.background = '#323345'
-    document.body.style.transition = 'ease 1s'
-    hai.style.background = 'rgb(255, 142, 60)'
-    hai.style.transition = 'ease 1s'
-    hai.style.height = '70vh'
-    hail.style.display = 'none'
-    setTimeout(function () {
-      content[4].style.display = 'block'
-      holder[4].style.display = 'block'
-      if (!opening[0].isPlaying || !opening[1].isPlaying || !opening[2].isPlaying || !opening[3].isPlaying || !opening[5].isPlaying) {
-        opening[0].pause()
-        opening[1].pause()
-        opening[2].pause()
-        opening[3].pause()
-        opening[5].pause()
-        opening[4].play()
-      } else {
-        opening[4].play()
-      }
-    }, 1000)
-    reset()
-    haiPlayers = setInterval(function () {
-      var r = Math.floor(Math.random() * (11))
-      var m = Math.floor(Math.random() * (11))
-      sideImg[0].src = ranHai[r]
-      sideImg[1].src = ranHai[m]
-    }, 1000)
-    hai.style.boxShadow = '5px 10px rgba(226, 78, 31, .8)'
-    hail2.addEventListener('click', popup)
-  } else if (animeNumber === 5) { // Fire Force
-    if (intViewportHeight <= 500 && intViewportWidth <= 2000) {
-      if (animeNumber === 5) {
-        for (i = 0; i < smallContent.length; i++) {
-          smallContent[i].style.display = 'flex'
-        }
-        smallContent[5].style.display = 'none'
-      } else if (intViewportHeight >= 500) {
-        for (i = 0; i < smallContent.length; i++) {
-          smallContent[i].style.display = 'none'
-        }
-      }
-    }
-    ff.addEventListener('mouseover', stopHover)
-    for (i = 0; i < anime.length; i++) {
-      anime[i].style.opacity = '.5'
-      anime[i].style.height = 'calc(100%/6)'
-      anime[i].style.boxShadow = '5px 10px rgba(70, 41, 71, .5)'
-      anime[i].style.opacity = '.5'
-      anime[i].style.filter = 'grayscale(90%)'
-      anime[i].style.background = 'white'
-      content[i].style.display = 'none'
-      holder[i].style.display = 'none'
-      logos[i].style.display = 'flex'
-      anime[5].style.opacity = '1'
-      anime[5].style.filter = 'grayscale(0%)'
-    }
-    if (intViewportHeight <= 500 && intViewportWidth <= 2000) {
-      for (i = 0; i < smallContent.length; i++) {
-        anime[i].style.height = '25%'
-      }
-    }
     document.body.style.cursor = 'url(images/cursors/ff.png), auto'
     document.body.style.background = '#2F2F2F'
     document.body.style.transition = 'ease 1s'
@@ -458,17 +458,17 @@ function expando () {
     ff.style.height = '70vh'
     ffl.style.display = 'none'
     setTimeout(function () {
-      content[5].style.display = 'block'
-      holder[5].style.display = 'block'
+      content[4].style.display = 'block'
+      holder[4].style.display = 'block'
       if (!opening[0].isPlaying || !opening[1].isPlaying || !opening[2].isPlaying || !opening[3].isPlaying || !opening[4].isPlaying) {
         opening[0].pause()
         opening[1].pause()
         opening[2].pause()
         opening[3].pause()
-        opening[4].pause()
-        opening[5].play()
+        //opening[4].pause()
+        //opening[5].play()
       } else {
-        opening[5].play()
+        opening[4].play()
       }
     }, 1000)
     reset()
@@ -488,8 +488,8 @@ function expando () {
     mhal2.style.cursor = 'pointer'
     days.style.transform = 'scale(1)'
     daysl2.style.cursor = 'pointer'
-    ao.style.transform = 'scale(1)'
-    aol2.style.cursor = 'pointer'
+  /*  ao.style.transform = 'scale(1)'
+    aol2.style.cursor = 'pointer'*/
     bsr.style.transform = 'scale(1)'
     bsrl2.style.cursor = 'pointer'
     hai.style.transform = 'scale(1)'
@@ -507,10 +507,10 @@ function popup () {
     let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no`
     open('days.html', 'test', params)
   }
-  if (animeNumber === 2) {
+  /*if (animeNumber === 2) {
     let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no`
     open('ao.html', 'test', params)
-  }
+  }*/
   if (animeNumber === 3) {
     let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no`
     open('bsr.html', 'test', params)
@@ -528,7 +528,7 @@ function popup () {
 function reset () {
   clearInterval(heroes)
   clearInterval(daysPlayers)
-  clearInterval(rugbyPlayers)
+  //clearInterval(rugbyPlayers)
   clearInterval(Haru)
   clearInterval(haiPlayers)
   clearInterval(ff8)

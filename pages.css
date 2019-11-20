@@ -175,6 +175,7 @@ li:hover{
   margin: 0;
 }
 .top-box{
+  padding: 5px;
   top: 90%;
   left: 2%;
   width: 150px;
@@ -196,4 +197,11 @@ li:hover{
 }
 #top:hover{
   color: #CC4961;
+}
+#top:active{
+  color: black;
+}
+.top-box:active {
+  transition: 0s;
+  transform: scale(1)
 }
