@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>All Out!!</title>
+    <link href = "pages.css" rel = "stylesheet" type = "text/css" />
+    <!-- Object Fit polyfill -->
+    <script src = "https://unpkg.com/object-fit-images/dist/ofi.min.js"></script>
+
+    <!-- Jarallax -->
+    <link href="dist/jarallax.css" rel="stylesheet">
+    <script src = "dist/jarallax.js"></script>
+    <script src = "dist/jarallax-video.js"></script>
+    <script src = "dist/jarallax-element.js"></script>
+
+  </head>
+  <body id = "mha">
+    <div class = "jarallax">
+        <img class = "jarallax-img" src = "images/mha.png">
+        <div class = "title">
+            <h1>All Out</h1>
+        </div>
+    </div>
+    <div class = "gap">
+    </div>
+    <div class = "gap">
+    </div>
+    <!-- Class 1A -->
+    <div class = "jarallax">
+        <img class = "jarallax-img" src = "images/hai/Karasuno/banner/hai.png">
+        <div class = "title">
+            <h1>Class 1-A </h1>
+        </div>
+    </div>
+    <div class = "gap">
+        <div class = "container">
+        </div>
+    </div>
+    <!-- Aizawa -->
+    <div class = "jarallax">
+        <img class = "jarallax-img" src = "images/mha/teachers/aizawa2.png">
+        <div class = "title">
+            <h1>Shota Aizawa</h1>
+        </div>
+    </div>
+    <div class = "gap">
+        <div class = "container">
+          <img  class = "character" src = "images/mha/teachers/aizawa.png" onmouseover = "teach1()" >
+          <img class = "slide teach" src = "images/mha/teachers/eraserhead.png" >
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        // object-fit polyfill run
+        objectFitImages();
+
+        /* init Jarallax */
+        jarallax(document.querySelectorAll('.jarallax'));
+
+        jarallax(document.querySelectorAll('.jarallax-keep-img'), {
+            keepImg: true,
+        });
+    </script>
+    <script src = ".js"></script>
+  </body>
+</html>
