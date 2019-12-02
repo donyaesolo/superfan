@@ -1,66 +1,37 @@
-// divs
-var mha = document.getElementById('mha')
-var days = document.getElementById('days')
-var ao = document.getElementById('ao')
-var bsr = document.getElementById('bsr')
-var hai = document.getElementById('hai')
-var ff = document.getElementById('ff')
-var content = document.getElementsByClassName('content')
-var holder = document.getElementsByClassName('holder')
-// logos
-var mhal = document.getElementById('mha-logo')
-var daysl = document.getElementById('days-logo')
-var aol = document.getElementById('ao-logo')
-var bsrl = document.getElementById('bsr-logo')
-var hail = document.getElementById('hai-logo')
-var ffl = document.getElementById('ff-logo')
-// Second Logo
-var mhal2 = document.getElementById('mha-logo2')
-var daysl2 = document.getElementById('days-logo2')
-var aol2 = document.getElementById('ao-logo2')
-var bsrl2 = document.getElementById('bsr-logo2')
-var hail2 = document.getElementById('hai-logo2')
-var ffl2 = document.getElementById('ff-logo2')
-
-var sideImg = document.getElementsByClassName('sideImg')
-// Div Array
-var anime = [mha, days, bsr, hai, ff]
-var logos = [mhal, daysl, bsrl, hail, ffl]
-var animeNumber
-var opening = document.getElementsByClassName('video')
-var intViewportHeight = window.innerHeight
-var intViewportWidth = window.innerWidth
-var smallContent = document.getElementsByClassName('content-small')
-function bokuNo () {
-  animeNumber = 0
-  expando()
+// When the user scrolls the page, execute myFunction
+window.onscroll = function () {
+  myFunction()
 }
 
-function soccer () {
-  animeNumber = 1
-  expando()
+// Get the navbar
+var navbar = document.getElementById('navbar')
+var footer = document.getElementById('footer')
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction () {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add('sticky')
+    navbar.style.borderBottom = '2px solid #A68F93'
+    footer.style.transition = 'ease 1s'
+    footer.style.top = '90%'
+    sideImg[0].style.transition = 'ease 1s'
+    sideImg[0].style.opacity = '.5'
+    sideImg[1].style.transition = 'ease 1s'
+    sideImg[1].style.opacity = '.5'
+  } else {
+    navbar.classList.remove('sticky')
+    navbar.style.borderBottom = '0px'
+    footer.style.transition = 'ease .5s'
+    footer.style.top = '100%'
+    sideImg[0].style.transition = 'ease 1s'
+    sideImg[0].style.opacity = '0'
+    sideImg[1].style.transition = 'ease 1s'
+    sideImg[1].style.opacity = '0'
+  }
 }
-
-/*function rugby () {
-  animeNumber = 2
-  expando()
-}*/
-
-function haru () {
-  animeNumber = 3
-  expando()
-}
-
-function haikyu () {
-  animeNumber = 4
-  expando()
-}
-
-function fire () {
-  animeNumber = 5
-  expando()
-}
-
 var ranCaNor = ['images/mha/caNor/aoyama.png', 'images/mha/caNor/bakugo.png',
   'images/mha/caNor/deku.png', 'images/mha/caNor/denki.png', 'images/mha/caNor/jiro.png',
   'images/mha/caNor/kirishima.png', 'images/mha/caNor/koji.png', 'images/mha/caNor/mashirao.png',
@@ -102,401 +73,282 @@ var ranHai = ['images/hai/Karasuno/standby/sugawara.png', 'images/hai/Karasuno/s
   'images/hai/Karasuno/standby/daichi.png', 'images/hai/Karasuno/standby/yamaguchi.png']
 var ranFf = ['images/ff/akitaru.png', 'images/ff/arthur.png', 'images/ff/iris.png',
   'images/ff/maki.png', 'images/ff/shinra.png', 'images/ff/takehisa.png']
+var sideImg = document.getElementsByClassName('sideImg')
 var heroes
 var daysPlayers
 var rugbyPlayers
 var Haru
 var haiPlayers
 var ff8
-function expando () {
-  var i
-  if (animeNumber === 0) { // My Hero Academia
-    if (intViewportHeight <= 500 && intViewportWidth <= 2000) {
-      if (animeNumber === 0) {
-        for (i = 0; i < smallContent.length; i++) {
-          smallContent[i].style.display = 'flex'
-        }
-        smallContent[0].style.display = 'none'
-      } else if (intViewportHeight >= 500) {
-        for (i = 0; i < smallContent.length; i++) {
-          smallContent[i].style.display = 'none'
-        }
-      }
-    }
-    mha.addEventListener('mouseover', stopHover)
-    for (i = 0; i < anime.length; i++) {
-      anime[i].style.opacity = '.5'
-      anime[i].style.height = 'calc(100%/6)'
-      anime[i].style.boxShadow = '5px 10px rgba(70, 41, 71, .5)'
-      anime[i].style.opacity = '.5'
-      anime[i].style.background = 'white'
-      anime[i].style.filter = 'grayscale(90%)'
-      content[i].style.display = 'none'
-      holder[i].style.display = 'none'
-      logos[i].style.display = 'flex'
-      anime[0].style.opacity = '1'
-      anime[0].style.filter = 'grayscale(0%)'
-    }
-    if (intViewportHeight <= 500 && intViewportWidth <= 2000) {
-      for (i = 0; i < smallContent.length; i++) {
-        anime[i].style.height = '25%'
-      }
-    }
-    document.body.style.cursor = 'url(images/cursors/mha.cur), auto'
-    mha.style.background = 'rgb(255, 251, 176)'
-    document.body.style.transition = 'ease 1s'
-    document.body.style.background = '#2A7E5C'
-    mha.style.transition = 'ease 1s'
-    mha.style.height = '70vh'
-    mhal.style.display = 'none'
-    setTimeout(function () {
-      content[0].style.display = 'block'
-      holder[0].style.display = 'block'
-      if (!opening[1].isPlaying || !opening[2].isPlaying || !opening[3].isPlaying || !opening[4].isPlaying) {
-        opening[1].pause()
-        opening[2].pause()
-        opening[3].pause()
-        opening[4].pause()
-        //opening[5].pause()
-        opening[0].play()
-      } else {
-        opening[0].play()
-      }
-    }, 400)
-    mha.style.boxShadow = '5px 10px rgba(70, 41, 71, .5)'
-    mhal2.addEventListener('click', popup)
-    reset()
-    heroes = setInterval(function () {
-      var r = Math.floor(Math.random() * (19))
-      sideImg[0].src = ranCaNor[r]
-      sideImg[1].src = ranCaHero[r]
-    }, 1000)
-  } else if (animeNumber === 1) { // Days
-    document.body.style.background = '#0E0D0E'
-    document.body.style.transition = 'ease 1s'
-    if (intViewportHeight <= 500 && intViewportWidth <= 2000) {
-      if (animeNumber === 1) {
-        for (i = 0; i < smallContent.length; i++) {
-          smallContent[i].style.display = 'flex'
-        }
-        smallContent[1].style.display = 'none'
-      } else if (intViewportHeight >= 500) {
-        for (i = 0; i < smallContent.length; i++) {
-          smallContent[i].style.display = 'none'
-        }
-      }
-    }
-    days.addEventListener('mouseover', stopHover)
-    for (i = 0; i < anime.length; i++) {
-      anime[i].style.opacity = '.5'
-      anime[i].style.height = 'calc(100%/6)'
-      anime[i].style.boxShadow = '5px 10px rgba(70, 41, 71, .5)'
-      anime[i].style.opacity = '.5'
-      anime[i].style.filter = 'grayscale(90%)'
-      anime[i].style.background = 'white'
-      content[i].style.display = 'none'
-      holder[i].style.display = 'none'
-      logos[i].style.display = 'flex'
-      anime[1].style.opacity = '1'
-      anime[1].style.filter = 'grayscale(0%)'
-    }
-    if (intViewportHeight <= 500 && intViewportWidth <= 2000) {
-      for (i = 0; i < smallContent.length; i++) {
-        anime[i].style.height = '25%'
-      }
-    }
-    document.body.style.cursor = 'url(images/cursors/days.cur), auto'
-    days.style.background = 'rgb(40, 40, 40)'
-    days.style.transition = 'ease 1s'
-    days.style.height = '70vh'
-    daysl.style.display = 'none'
-    setTimeout(function () {
-      content[1].style.display = 'block'
-      holder[1].style.display = 'block'
-      if (!opening[0].isPlaying || !opening[2].isPlaying || !opening[3].isPlaying || !opening[4].isPlaying) {
-        opening[0].pause()
-        opening[2].pause()
-        opening[3].pause()
-        opening[4].pause()
-        //opening[5].pause()
-        opening[1].play()
-      } else {
-        opening[1].play()
-      }
-    }, 1000)
-    days.style.boxShadow = '5px 10px rgba(200, 201, 200, .5)'
-    daysl2.addEventListener('click', popup)
-    reset()
-    daysPlayers = setInterval(function () {
-      var r = Math.floor(Math.random() * (13))
-      var m = Math.floor(Math.random() * (13))
-      sideImg[0].src = ranDays[r]
-      sideImg[1].src = ranDays[m]
-    }, 1000)
-  } else if (animeNumber === 2) { // All Out
-    if (intViewportHeight <= 500 && intViewportWidth <= 2000) {
-      if (animeNumber === 2) {
-        for (i = 0; i < smallContent.length; i++) {
-          smallContent[i].style.display = 'flex'
-        }
-        smallContent[2].style.display = 'none'
-      } else if (intViewportHeight >= 500) {
-        for (i = 0; i < smallContent.length; i++) {
-          smallContent[i].style.display = 'none'
-        }
-      }
-    }
-  /*  ao.addEventListener('mouseover', stopHover)
-    for (i = 0; i < anime.length; i++) {
-      anime[i].style.opacity = '.5'
-      anime[i].style.height = 'calc(100%/6)'
-      anime[i].style.boxShadow = '5px 10px rgba(70, 41, 71, .5)'
-      anime[i].style.opacity = '.5'
-      anime[i].style.filter = 'grayscale(90%)'
-      anime[i].style.background = 'white'
-      content[i].style.display = 'none'
-      holder[i].style.display = 'none'
-      logos[i].style.display = 'flex'
-      anime[2].style.opacity = '1'
-      anime[2].style.filter = 'grayscale(0%)'
-    }
-    if (intViewportHeight <= 500 && intViewportWidth <= 2000) {
-      for (i = 0; i < smallContent.length; i++) {
-        anime[i].style.height = '25%'
-      }
-    }
-    document.body.style.cursor = 'url(images/cursors/ao.cur), auto'
-    document.body.style.background = '#283154'
-    document.body.style.transition = 'ease 1s'
-    ao.style.background = '#B04531'
-    ao.style.transition = 'ease 1s'
-    ao.style.height = '70vh'
-    aol.style.display = 'none'
-    setTimeout(function () {
-      content[2].style.display = 'block'
-      holder[2].style.display = 'block'
-      if (!opening[0].isPlaying || !opening[1].isPlaying || !opening[3].isPlaying || !opening[4].isPlaying) {
-        opening[0].pause()
-        opening[1].pause()
-        opening[3].pause()
-        opening[4].pause()
-        opening[5].pause()
-        opening[2].play()
-      } else {
-        opening[2].play()
-      }
-    }, 1000)
-    ao.style.boxShadow = '5px 10px rgba(233, 234, 236, .9)'
-    aol2.addEventListener('click', popup)
-    reset()
-    rugbyPlayers = setInterval(function () {
-      var r = Math.floor(Math.random() * (24))
-      var m = Math.floor(Math.random() * (24))
-      sideImg[0].src = ranAO[r]
-      sideImg[1].src = ranAO[m]
-    }, 1000)*/
-  } else if (animeNumber === 3) { // Blue Spring Ride
-    if (intViewportHeight <= 500 && intViewportWidth <= 2000) {
-      if (animeNumber === 3) {
-        for (i = 0; i < smallContent.length; i++) {
-          smallContent[i].style.display = 'flex'
-        }
-        smallContent[2].style.display = 'none'
-      } else if (intViewportHeight >= 500) {
-        for (i = 0; i < smallContent.length; i++) {
-          smallContent[i].style.display = 'none'
-        }
-      }
-    }
-    bsr.addEventListener('mouseover', stopHover)
-    for (i = 0; i < anime.length; i++) {
-      anime[i].style.opacity = '.5'
-      anime[i].style.height = 'calc(100%/6)'
-      anime[i].style.boxShadow = '5px 10px rgba(70, 41, 71, .5)'
-      anime[i].style.opacity = '.5'
-      anime[i].style.filter = 'grayscale(90%)'
-      anime[i].style.background = 'white'
-      content[i].style.display = 'none'
-      holder[i].style.display = 'none'
-      logos[i].style.display = 'flex'
-      anime[2].style.opacity = '1'
-      anime[2].style.filter = 'grayscale(0%)'
-    }
-    if (intViewportHeight <= 500 && intViewportWidth <= 2000) {
-      for (i = 0; i < smallContent.length; i++) {
-        anime[i].style.height = '25%'
-      }
-    }
-    document.body.style.cursor = 'url(images/cursors/bsr.cur), auto'
-    document.body.style.background = '#C1D9CB'
-    document.body.style.transition = 'ease 1s'
-    bsr.style.background = 'rgba(108, 140, 255, .5)'
-    bsr.style.transition = 'ease 1s'
-    bsr.style.height = '70vh'
-    bsrl.style.display = 'none'
-    setTimeout(function () {
-      content[2].style.display = 'block'
-      holder[2].style.display = 'block'
-      if (!opening[0].isPlaying || !opening[1].isPlaying || !opening[2].isPlaying || !opening[4].isPlaying || !opening[5].isPlaying) {
-        opening[0].pause()
-        opening[1].pause()
-        //opening[2].pause()
-        opening[4].pause()
-        //opening[5].pause()
-        opening[2].play()
-      } else {
-        opening[2].play()
-      }
-    }, 1000)
-    reset()
-    Haru = setInterval(function () {
-      var r = Math.floor(Math.random() * (5))
-      var m = Math.floor(Math.random() * (5))
-      sideImg[0].src = ranBSR[r]
-      sideImg[1].src = ranBSR[m]
-    }, 1000)
-    bsr.style.boxShadow = '5px 10px rgba(70, 41, 71, .5)'
-    bsrl2.addEventListener('click', popup)
-  } else if (animeNumber === 4) { // Haikyu!!
-    if (intViewportHeight <= 500 && intViewportWidth <= 2000) {
-      if (animeNumber === 4) {
-        for (i = 0; i < smallContent.length; i++) {
-          smallContent[i].style.display = 'flex'
-        }
-        smallContent[3].style.display = 'none'
-      } else if (intViewportHeight >= 500) {
-        for (i = 0; i < smallContent.length; i++) {
-          smallContent[i].style.display = 'none'
-        }
-      }
-    }
-    hai.addEventListener('mouseover', stopHover)
-    for (i = 0; i < anime.length; i++) {
-      anime[i].style.opacity = '.5'
-      anime[i].style.height = 'calc(100%/6)'
-      anime[i].style.boxShadow = '5px 10px rgba(70, 41, 71, .5)'
-      anime[i].style.opacity = '.5'
-      anime[i].style.filter = 'grayscale(90%)'
-      anime[i].style.background = 'white'
-      content[i].style.display = 'none'
-      holder[i].style.display = 'none'
-      logos[i].style.display = 'flex'
-      anime[3].style.opacity = '1'
-      anime[3].style.filter = 'grayscale(0%)'
-    }
-    if (intViewportHeight <= 500 && intViewportWidth <= 2000) {
-      for (i = 0; i < smallContent.length; i++) {
-        anime[i].style.height = '25%'
-      }
-    }
-    document.body.style.cursor = 'url(images/cursors/hai.cur), auto'
-    document.body.style.background = '#323345'
-    document.body.style.transition = 'ease 1s'
-    hai.style.background = 'rgb(255, 142, 60)'
-    hai.style.transition = 'ease 1s'
-    hai.style.height = '70vh'
-    hail.style.display = 'none'
-    setTimeout(function () {
-      content[3].style.display = 'block'
-      holder[3].style.display = 'block'
-      if (!opening[0].isPlaying || !opening[1].isPlaying || !opening[2].isPlaying || !opening[3].isPlaying || !opening[5].isPlaying) {
-        opening[0].pause()
-        opening[1].pause()
-        opening[2].pause()
-      //  opening[3].pause()
-      //  opening[5].pause()
-        opening[3].play()
-      } else {
-        opening[3].play()
-      }
-    }, 1000)
-    reset()
-    haiPlayers = setInterval(function () {
-      var r = Math.floor(Math.random() * (11))
-      var m = Math.floor(Math.random() * (11))
-      sideImg[0].src = ranHai[r]
-      sideImg[1].src = ranHai[m]
-    }, 1000)
-    hai.style.boxShadow = '5px 10px rgba(226, 78, 31, .8)'
-    hail2.addEventListener('click', popup)
-  } else if (animeNumber === 5) { // Fire Force
-    if (intViewportHeight <= 500 && intViewportWidth <= 2000) {
-      if (animeNumber === 5) {
-        for (i = 0; i < smallContent.length; i++) {
-          smallContent[i].style.display = 'flex'
-        }
-        smallContent[4].style.display = 'none'
-      } else if (intViewportHeight >= 500) {
-        for (i = 0; i < smallContent.length; i++) {
-          smallContent[i].style.display = 'none'
-        }
-      }
-    }
-    ff.addEventListener('mouseover', stopHover)
-    for (i = 0; i < anime.length; i++) {
-      anime[i].style.opacity = '.5'
-      anime[i].style.height = 'calc(100%/6)'
-      anime[i].style.boxShadow = '5px 10px rgba(70, 41, 71, .5)'
-      anime[i].style.opacity = '.5'
-      anime[i].style.filter = 'grayscale(90%)'
-      anime[i].style.background = 'white'
-      content[i].style.display = 'none'
-      holder[i].style.display = 'none'
-      logos[i].style.display = 'flex'
-      anime[4].style.opacity = '1'
-      anime[4].style.filter = 'grayscale(0%)'
-    }
-    if (intViewportHeight <= 500 && intViewportWidth <= 2000) {
-      for (i = 0; i < smallContent.length; i++) {
-        anime[i].style.height = '25%'
-      }
-    }
-    document.body.style.cursor = 'url(images/cursors/ff.png), auto'
-    document.body.style.background = '#2F2F2F'
-    document.body.style.transition = 'ease 1s'
-    ff.style.transition = 'ease 1s'
-    ff.style.height = '70vh'
-    ffl.style.display = 'none'
-    setTimeout(function () {
-      content[4].style.display = 'block'
-      holder[4].style.display = 'block'
-      if (!opening[0].isPlaying || !opening[1].isPlaying || !opening[2].isPlaying || !opening[3].isPlaying || !opening[4].isPlaying) {
-        opening[0].pause()
-        opening[1].pause()
-        opening[2].pause()
-        opening[3].pause()
-        //opening[4].pause()
-        //opening[5].play()
-      } else {
-        opening[4].play()
-      }
-    }, 1000)
-    reset()
-    ff8 = setInterval(function () {
-      var r = Math.floor(Math.random() * (5))
-      var m = Math.floor(Math.random() * (5))
-      sideImg[0].src = ranFf[r]
-      sideImg[1].src = ranFf[m]
-    }, 1000)
-    ff.style.background = 'rgb(132, 208, 217)'
-    ff.style.boxShadow = '5px 10px rgb(226, 201, 45)'
-    ffl2.addEventListener('click', popup)
-  }
 
-  function stopHover () {
-    mha.style.transform = 'scale(1)'
-    mhal2.style.cursor = 'pointer'
-    days.style.transform = 'scale(1)'
-    daysl2.style.cursor = 'pointer'
-  /*  ao.style.transform = 'scale(1)'
-    aol2.style.cursor = 'pointer'*/
-    bsr.style.transform = 'scale(1)'
-    bsrl2.style.cursor = 'pointer'
-    hai.style.transform = 'scale(1)'
-    hail2.style.cursor = 'pointer'
-    ff.style.transform = 'scale(1)'
-    ffl2.style.cursor = 'pointer'
+var box = document.getElementsByClassName('angle-border')
+var mha = document.getElementById('mha')
+var main = document.getElementsByClassName('main-body')
+var i
+var about = false
+// My Hero Academia
+function next () {
+  addAbout()
+  document.body.style.cursor = 'url(images/cursors/mha.cur), auto'
+  for (i = 0; i < box.length; i++) {
+    box[i].style.transition = 'ease 1s'
+    box[i].style.left = '-100%'
   }
+  setTimeout(function () {
+    box[0].style.display = 'none'
+    box[2].style.display = 'none'
+    box[3].style.display = 'none'
+    box[4].style.display = 'none'
+    box[5].style.display = 'none'
+    box[6].style.display = 'none'
+  }, 500)
+
+  mha.style.left = '100%'
+  mha.style.display = 'block'
+  setTimeout(function () {
+    mha.style.border = '5px solid #2A7E5C'
+    mha.style.transition = 'ease 1s'
+    mha.style.left = '0%'
+  }, 100)
+  reset()
+  heroes = setInterval(function () {
+    var r = Math.floor(Math.random() * (19))
+    sideImg[0].src = ranCaNor[r]
+    sideImg[1].src = ranCaHero[r]
+  }, 1000)
+}
+// Days
+function nextDays () {
+  addAbout()
+  document.body.style.cursor = 'url(images/cursors/days.cur), auto'
+  for (i = 0; i < box.length; i++) {
+    box[i].style.transition = 'ease 1s'
+    box[i].style.left = '-100%'
+  }
+  setTimeout(function () {
+    box[0].style.display = 'none'
+    box[1].style.display = 'none'
+    box[3].style.display = 'none'
+    box[4].style.display = 'none'
+    box[5].style.display = 'none'
+    box[6].style.display = 'none'
+  }, 500)
+
+  box[2].style.left = '100%'
+  box[2].style.display = 'block'
+  setTimeout(function () {
+    box[2].style.border = '5px solid rgb(40, 40, 40)'
+    box[2].style.transition = 'ease 1s'
+    box[2].style.left = '0%'
+  }, 100)
+  reset()
+  daysPlayers = setInterval(function () {
+    var r = Math.floor(Math.random() * (13))
+    var m = Math.floor(Math.random() * (13))
+    sideImg[0].src = ranDays[r]
+    sideImg[1].src = ranDays[m]
+  }, 1000)
+}
+// All Out
+function nextAo () {
+  addAbout()
+  document.body.style.cursor = 'url(images/cursors/ao.cur), auto'
+  for (i = 0; i < box.length; i++) {
+    box[i].style.transition = 'ease 1s'
+    box[i].style.left = '-100%'
+  }
+  setTimeout(function () {
+    box[0].style.display = 'none'
+    box[1].style.display = 'none'
+    box[2].style.display = 'none'
+    box[4].style.display = 'none'
+    box[5].style.display = 'none'
+    box[6].style.display = 'none'
+  }, 500)
+
+  box[3].style.left = '100%'
+  box[3].style.display = 'block'
+  setTimeout(function () {
+    box[3].style.border = '5px solid #204275'
+    box[3].style.transition = 'ease 1s'
+    box[3].style.left = '0%'
+  }, 100)
+  reset()
+  rugbyPlayers = setInterval(function () {
+    var r = Math.floor(Math.random() * (24))
+    var m = Math.floor(Math.random() * (24))
+    sideImg[0].src = ranAO[r]
+    sideImg[1].src = ranAO[m]
+  }, 1000)
+}
+// Ao Haru Ride
+function nextBsr () {
+  addAbout()
+  document.body.style.cursor = 'url(images/cursors/bsr.cur), auto'
+  for (i = 0; i < box.length; i++) {
+    box[i].style.transition = 'ease 1s'
+    box[i].style.left = '-100%'
+  }
+  setTimeout(function () {
+    box[0].style.display = 'none'
+    box[1].style.display = 'none'
+    box[2].style.display = 'none'
+    box[3].style.display = 'none'
+    box[5].style.display = 'none'
+    box[6].style.display = 'none'
+  }, 500)
+
+  box[4].style.left = '100%'
+  box[4].style.display = 'block'
+  setTimeout(function () {
+    box[4].style.border = '5px solid #D9B282'
+    box[4].style.transition = 'ease 1s'
+    box[4].style.left = '0%'
+  }, 100)
+  reset()
+  Haru = setInterval(function () {
+    var r = Math.floor(Math.random() * (5))
+    var m = Math.floor(Math.random() * (5))
+    sideImg[0].src = ranBSR[r]
+    sideImg[1].src = ranBSR[m]
+  }, 1000)
+}
+// Haikyu!!
+function nextHai () {
+  addAbout()
+  document.body.style.cursor = 'url(images/cursors/hai.cur), auto'
+  for (i = 0; i < box.length; i++) {
+    box[i].style.transition = 'ease 1s'
+    box[i].style.left = '-100%'
+  }
+  setTimeout(function () {
+    box[0].style.display = 'none'
+    box[1].style.display = 'none'
+    box[2].style.display = 'none'
+    box[3].style.display = 'none'
+    box[4].style.display = 'none'
+    box[6].style.display = 'none'
+  }, 500)
+
+  box[5].style.left = '100%'
+  box[5].style.display = 'block'
+  setTimeout(function () {
+    box[5].style.border = '5px solid #292E48'
+    box[5].style.outline = '2px solid #F2C641'
+    box[5].style.transition = 'ease 1s'
+    box[5].style.left = '0%'
+  }, 100)
+  reset()
+  haiPlayers = setInterval(function () {
+    var r = Math.floor(Math.random() * (11))
+    var m = Math.floor(Math.random() * (11))
+    sideImg[0].src = ranHai[r]
+    sideImg[1].src = ranHai[m]
+  }, 1000)
+}
+// Fire Force
+function nextFf () {
+  addAbout()
+  document.body.style.cursor = 'url(images/cursors/ff.png), auto'
+  for (i = 0; i < box.length; i++) {
+    box[i].style.transition = 'ease 1s'
+    box[i].style.left = '-100%'
+  }
+  setTimeout(function () {
+    box[0].style.display = 'none'
+    box[1].style.display = 'none'
+    box[2].style.display = 'none'
+    box[3].style.display = 'none'
+    box[4].style.display = 'none'
+    box[5].style.display = 'none'
+  }, 500)
+
+  box[6].style.left = '100%'
+  box[6].style.display = 'block'
+  setTimeout(function () {
+    box[6].style.border = '5px solid #6B6A66'
+    box[6].style.outline = '2px solid #F20C1F'
+    box[6].style.transition = 'ease 1s'
+    box[6].style.left = '0%'
+  }, 100)
+  reset()
+  ff8 = setInterval(function () {
+    var r = Math.floor(Math.random() * (5))
+    var m = Math.floor(Math.random() * (5))
+    sideImg[0].src = ranFf[r]
+    sideImg[1].src = ranFf[m]
+  }, 1000)
+}
+function addAbout () {
+  navbar.style.listStyle = 'none'
+  if (about === false) {
+    var li = document.createElement('li')
+    li.appendChild(document.createTextNode('About'))
+    li.setAttribute('id', 'about')// added line
+    navbar.appendChild(li)
+    var aboutEle = document.getElementById('about')
+    aboutEle.addEventListener('click', removeAbout)
+    aboutEle.setAttribute('class', 'hvr-underline-from-center')
+    aboutEle.style.top = '10%'
+    about = true
+  }
+}
+function removeAbout () {
+  var aboutEle = document.getElementById('about')
+  aboutEle.removeEventListener('click', removeAbout)
+  aboutEle.remove()
+  about = false
+  reset()
+  sideImg[0].src = 'images/trans.svg'
+  sideImg[1].src = 'images/trans.svg'
+  document.body.style.cursor = 'default'
+  for (i = 0; i < box.length; i++) {
+    box[i].style.transition = 'ease 1s'
+    box[i].style.left = '-100%'
+  }
+  setTimeout(function () {
+    box[1].style.display = 'none'
+    box[2].style.display = 'none'
+    box[3].style.display = 'none'
+    box[4].style.display = 'none'
+    box[5].style.display = 'none'
+    box[6].style.display = 'none'
+  }, 500)
+
+  box[0].style.left = '100%'
+  box[0].style.display = 'block'
+  setTimeout(function () {
+    box[0].style.border = '5px solid #F9BAD5'
+    box[0].style.outline = '2px solid #FBE6B7'
+    box[0].style.transition = 'ease 1s'
+    box[0].style.left = '0%'
+  }, 100)
+
+}
+var animeNumber
+function nextPageMha () {
+  animeNumber = 0
+  popup()
+}
+function nextPageDays () {
+  animeNumber = 1
+  popup()
+}
+function nextPageAo () {
+  animeNumber = 2
+  popup()
+}
+function nextPageHaru () {
+  animeNumber = 3
+  popup()
+}
+function nextPageHai () {
+  animeNumber = 4
+  popup()
+}
+function nextPageFf() {
+  animeNumber = 5
+  popup()
 }
 function popup () {
   if (animeNumber === 0) {
@@ -507,10 +359,10 @@ function popup () {
     let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no`
     open('days.html', 'test', params)
   }
-  /*if (animeNumber === 2) {
+  if (animeNumber === 2) {
     let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no`
     open('ao.html', 'test', params)
-  }*/
+  }
   if (animeNumber === 3) {
     let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no`
     open('bsr.html', 'test', params)
@@ -524,11 +376,10 @@ function popup () {
     open('ff.html', 'test', params)
   }
 }
-
 function reset () {
   clearInterval(heroes)
   clearInterval(daysPlayers)
-  //clearInterval(rugbyPlayers)
+  clearInterval(rugbyPlayers)
   clearInterval(Haru)
   clearInterval(haiPlayers)
   clearInterval(ff8)
