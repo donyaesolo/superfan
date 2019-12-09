@@ -205,3 +205,70 @@ li:hover{
   transition: 0s;
   transform: scale(1)
 }
+.close-box{
+  padding: 5px;
+  top: 90%;
+  right: 2%;
+  width: 150px;
+  height: 55px;
+  background: white;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 10px 10px rgba(70, 70, 70, .2);
+  transition: ease .5s;
+}
+.close-box:hover {
+  transform: scale(1.2)
+}
+#back{
+  font-size: 100%;
+  transition: ease .5s;
+}
+#back:hover{
+  color: #CC4961;
+}
+#back:active{
+  color: black;
+}
+.close-box:active {
+  transition: 0s;
+  transform: scale(1)
+}
+
+@media screen and (max-width: 1248px){
+  .bigTitle{
+    margin-left: -500px;
+  }
+}
+@media screen and (max-width: 948px){
+  li{
+    width: 100%;
+    text-align: center;
+    padding: 30px;
+    font-size: 35px;
+  }
+  .space{
+    margin-top: 0px;
+    margin-left: 25%;
+    margin-bottom: 8%;
+  }
+  ul{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .menu{
+    top: 25%;
+    left: 0%;
+    width: 100%;
+    height: auto;
+  }
+  .side{
+    display: none;
+  }
+  .holder{
+    width: 100%;
+  }
+}

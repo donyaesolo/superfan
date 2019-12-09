@@ -12,6 +12,7 @@ var sticky = navbar.offsetTop
 
 // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
 function myFunction () {
+  console.log(navbar.offsetTop)
   if (window.pageYOffset >= sticky) {
     navbar.classList.add('sticky')
     navbar.style.borderBottom = '2px solid #A68F93'
@@ -83,7 +84,6 @@ var ff8
 
 var box = document.getElementsByClassName('angle-border')
 var mha = document.getElementById('mha')
-var main = document.getElementsByClassName('main-body')
 var i
 var about = false
 // My Hero Academia
@@ -108,7 +108,12 @@ function next () {
   setTimeout(function () {
     mha.style.border = '5px solid #2A7E5C'
     mha.style.transition = 'ease 1s'
-    mha.style.left = '0%'
+    var x = window.matchMedia('(max-width: 936px)')
+    if (x.matches) {
+      mha.style.left = '20%'
+    } else {
+      mha.style.left = '0%'
+    }
   }, 100)
   reset()
   heroes = setInterval(function () {
@@ -139,7 +144,13 @@ function nextDays () {
   setTimeout(function () {
     box[2].style.border = '5px solid rgb(40, 40, 40)'
     box[2].style.transition = 'ease 1s'
-    box[2].style.left = '0%'
+    var x = window.matchMedia('(max-width: 936px)')
+    if (x.matches) {
+      console.log('uad')
+      box[2].style.left = '20%'
+    } else {
+      box[2].style.left = '0%'
+    }
   }, 100)
   reset()
   daysPlayers = setInterval(function () {
@@ -171,7 +182,13 @@ function nextAo () {
   setTimeout(function () {
     box[3].style.border = '5px solid #204275'
     box[3].style.transition = 'ease 1s'
-    box[3].style.left = '0%'
+    var x = window.matchMedia('(max-width: 936px)')
+    if (x.matches) {
+      console.log('uad')
+      box[3].style.left = '20%'
+    } else {
+      box[3].style.left = '0%'
+    }
   }, 100)
   reset()
   rugbyPlayers = setInterval(function () {
@@ -203,7 +220,13 @@ function nextBsr () {
   setTimeout(function () {
     box[4].style.border = '5px solid #D9B282'
     box[4].style.transition = 'ease 1s'
-    box[4].style.left = '0%'
+    var x = window.matchMedia('(max-width: 936px)')
+    if (x.matches) {
+      console.log('uad')
+      box[4].style.left = '20%'
+    } else {
+      box[4].style.left = '0%'
+    }
   }, 100)
   reset()
   Haru = setInterval(function () {
@@ -236,7 +259,13 @@ function nextHai () {
     box[5].style.border = '5px solid #292E48'
     box[5].style.outline = '2px solid #F2C641'
     box[5].style.transition = 'ease 1s'
-    box[5].style.left = '0%'
+    var x = window.matchMedia('(max-width: 936px)')
+    if (x.matches) {
+      console.log('uad')
+      box[5].style.left = '20%'
+    } else {
+      box[5].style.left = '0%'
+    }
   }, 100)
   reset()
   haiPlayers = setInterval(function () {
@@ -269,7 +298,13 @@ function nextFf () {
     box[6].style.border = '5px solid #6B6A66'
     box[6].style.outline = '2px solid #F20C1F'
     box[6].style.transition = 'ease 1s'
-    box[6].style.left = '0%'
+    var x = window.matchMedia('(max-width: 936px)')
+    var y = window.matchMedia('(max-width: 414px)')
+     if (x.matches) {
+      box[6].style.left = '20%'
+    } else{
+      box[6].style.left = '0%'
+    }
   }, 100)
   reset()
   ff8 = setInterval(function () {
@@ -281,7 +316,20 @@ function nextFf () {
 }
 function addAbout () {
   navbar.style.listStyle = 'none'
+  var bottom = document.getElementsByClassName('bottom')
   if (about === false) {
+    var x = window.matchMedia('(width: 1416px)')
+    if (x.matches) {
+      for (i = 0; i < bottom.length; i++) {
+        bottom[i].style.top = '40px'
+        bottom[i].style.marginBottom = '40px'
+      }
+    } else {
+      for (i = 0; i < bottom.length; i++) {
+        bottom[i].style.top = '0px'
+        bottom[i].style.marginBottom = '0px'
+      }
+    }
     var li = document.createElement('li')
     li.appendChild(document.createTextNode('About'))
     li.setAttribute('id', 'about')// added line
@@ -294,6 +342,11 @@ function addAbout () {
   }
 }
 function removeAbout () {
+  var bottom = document.getElementsByClassName('bottom')
+  for (i = 0; i < bottom.length; i++) {
+    bottom[i].style.top = '0px'
+    bottom[i].style.marginBottom = '0px'
+  }
   var aboutEle = document.getElementById('about')
   aboutEle.removeEventListener('click', removeAbout)
   aboutEle.remove()

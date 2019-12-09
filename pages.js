@@ -248,3 +248,6 @@ function slideBack () {
     hero[i].style.transform = 'translate(-600px, 0)'
   }
 }
+function back () {
+  window.open('', '_self').close()
+}
