@@ -147,6 +147,10 @@ li:hover{
   transform: scale(1.2);
   color: #8FDEFF
 }
+li:active{
+  transition: 0s;
+  transform: scale(1)
+}
 .space{
   height: 300px;
   width: 100%;
